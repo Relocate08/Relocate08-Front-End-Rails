@@ -30,6 +30,11 @@
 # Ignore application configuration
 /config/application.yml
 =======
+<<<<<<< HEAD
+# Ignore application configuration
+/config/application.yml
+=======
 # Ignore test coverage
 /coverage/*
 >>>>>>> 9fbd76410231ff6af04d18bfee68aa8c667b268c
+>>>>>>> 59862269cbcbda23a6902c2920aa5b2edb049aa2

@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root 'home#index'
   get '/auth/google_oauth2', as: :google_login
   get '/auth/google_oauth2/callback', to: 'sessions#create'
+  get '/dashboard', to: 'dashboard#index', as: :dashboard
 end

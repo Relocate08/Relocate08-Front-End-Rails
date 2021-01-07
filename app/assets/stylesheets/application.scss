@@ -1,0 +1,122 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+ */
+ // Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap";
+
+
+// .jumbotron{
+//  background-image: url(‘https://images.unsplash.com/photo-1555685812-4b943f1cb0eb?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80’);
+//  background-size: cover;
+//  background-repeat: no-repeat;
+// }
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+body {
+  margin: 15px 30px;
+  font: 15px Verdana, sans-serif;
+  background-image: url(/assets/welcome.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: gray;
+}
+
+li {
+  font-family: 'Philosopher';
+  font-size: 20px;
+  margin-left: 15px;
+}
+
+.center {
+  text-align: center;
+}
+
+.col {
+  // padding-top: 40px;
+  margin: 15px;
+}
+
+.image-wrapper {
+  z-index: -1;
+ position: absolute;
+ top:0;
+ bottom: 0;
+ left: 0;
+ right: 0;
+ img {
+   width: 100%;
+   height: 100%;
+   opacity: 0.8;
+ }
+};
+
+.accredidation {
+  position: absolute;bottom: 20px ; left: 20px
+};
+
+.group-card {
+  background-color: LightGray;
+  color: black;
+  padding: 20px;
+  border: solid 1px #999;
+  box-shadow:  0 0 10px  rgba(0,12,0,0.6);
+  -moz-box-shadow: 0 0 10px  rgba(0,12,0,0.6);
+  -webkit-box-shadow: 0 0 10px  rgba(0,12,0,0.6);
+  -o-box-shadow: 0 0 10px  rgba(0,12,0,0.6);
+  border-top-left-radius:12px;
+  border-top-right-radius:12px;
+  border-bottom-left-radius:12px;
+  border-bottom-right-radius:12px;
+}
+.login-card {
+  width: 120px;
+  background-color: LightGray;
+  padding: 20px;
+  border: solid 1px #999;
+  border-top-left-radius:12px;
+  border-top-right-radius:12px;
+  border-bottom-left-radius:12px;
+  border-bottom-right-radius:12px;
+}
+
+.login-card:hover {
+  box-shadow:  0 0 10px  rgba(0,12,0,0.6);
+  -moz-box-shadow: 0 0 10px  rgba(0,12,0,0.6);
+  -webkit-box-shadow: 0 0 10px  rgba(0,12,0,0.6);
+  -o-box-shadow: 0 0 10px  rgba(0,12,0,0.6);
+  cursor: pointer;
+}

@@ -9,6 +9,10 @@ class SessionsController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def destroy
+    
+  end
+
   private
   def request_hash
     request.env['omniauth.auth']

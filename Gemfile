@@ -46,6 +46,9 @@ group :development, :test do
   gem 'simplecov'
   gem 'shoulda-matchers'
   gem 'orderly'
+  gem 'travis'
+  gem 'rspec-rails'
+  gem 'rubocop-rails'
 end
 
 group :development do

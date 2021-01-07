@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SessionsController < ApplicationController
   def create
     user = User.find_or_create_by(uid: request_hash[:uid])
@@ -9,11 +11,10 @@ class SessionsController < ApplicationController
     redirect_to dashboard_path
   end
 
-  def destroy
-    
-  end
+  def destroy; end
 
   private
+
   def request_hash
     request.env['omniauth.auth']
   end

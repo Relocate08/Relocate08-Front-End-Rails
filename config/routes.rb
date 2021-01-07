@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get '/auth/google_oauth2/callback', to: 'sessions#create'
   get '/dashboard', to: 'dashboard#index', as: :dashboard
   get '/logout', to: 'sessions#destroy'
+  get '/utilities', to: 'utilities#index', as: :utilities_discover 
 end

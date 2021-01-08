@@ -7,4 +7,7 @@ Rails.application.routes.draw do
   get '/auth/google_oauth2', as: :google_login
   get '/auth/google_oauth2/callback', to: 'sessions#create'
   get '/dashboard', to: 'dashboard#index', as: :dashboard
+
+  get '/:location/:services', to: 'services#index'
+  get '/:location/:services/:type', to: 'service_types#index'
 end

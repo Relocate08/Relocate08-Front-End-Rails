@@ -1,0 +1,60 @@
+{
+  "data": [
+      {
+          "name": "Xcel Energy",
+          "image": "https://s3-media1.fl.yelpcdn.com/bphoto/pDZ8YQ098hOq1RzwbFFyWA/o.jpg",
+          "url": "https://www.yelp.com/biz/xcel-energy-denver?adjust_creative=zQj4oUhAlRBYo7eV2LOdZA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=zQj4oUhAlRBYo7eV2LOdZA",
+          "location": {
+              "address1": "1099 18th St",
+              "address2": "Ste 3000",
+              "address3": "",
+              "city": "Denver",
+              "zip_code": "80202",
+              "country": "US",
+              "state": "CO"
+          },
+          "phone": "(800) 895-4999",
+          "distance":  1.019879293317
+      },
+      {
+          "name": "Mountain Parks Electric",
+          "image": "",
+          "url": "https://www.yelp.com/biz/mountain-parks-electric-granby?adjust_creative=zQj4oUhAlRBYo7eV2LOdZA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=zQj4oUhAlRBYo7eV2LOdZA",
+          "location": {
+              "address1": "321 W Agate Ave",
+              "address2": "",
+              "address3": "",
+              "city": "Granby",
+              "zip_code": "80446",
+              "country": "US",
+              "state": "CO"
+          },
+          "phone": "(970) 887-3378",
+          "distance": 2.85732154944
+      },
+      {
+          "name": "IREA",
+          "image": "",
+          "url": "https://www.yelp.com/biz/irea-sedalia?adjust_creative=zQj4oUhAlRBYo7eV2LOdZA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=zQj4oUhAlRBYo7eV2LOdZA",
+          "location": {
+              "address1": "5496 N Hwy 85",
+              "address2": "",
+              "address3": null,
+              "city": "Sedalia",
+              "zip_code": "80135",
+              "country": "US",
+              "state": "CO"
+          },
+          "phone": "(800) 332-9540",
+          "distance": 3.4054643139
+      }
+  ]
+}
+
+
+
+
+
+
+
+

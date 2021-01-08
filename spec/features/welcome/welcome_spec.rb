@@ -25,12 +25,12 @@ describe 'As an authenticated user' do
       visit root_path
 
       click_link 'Login with Google'
+      expect(current_path).to eq(dashboard_path)
 
       user_count = User.count
       expect(user_count).to eq(1)
       user = User.first
 
-      expect(current_path).to eq(dashboard_path)
       expect(page).to have_link('Log Out')
     end
 

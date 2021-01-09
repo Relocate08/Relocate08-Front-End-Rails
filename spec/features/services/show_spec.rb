@@ -16,7 +16,17 @@ describe 'As a logged in user' do
            }).
          to_return(status: 200, body: json_response, headers: {})
 
-      visit '/80211/utilities/Electricity'
+			visit '/80211/utilities/Electricity'
+
+			click_link 'Xcel Energy'
+
+			expect(current_path).to eq('/80211/utilities/Electricity/9s8dfs7fsdmsdf')
+			expect(page).to have_content('Xcel Energy')
+      expect(page).to have_xpath("//img[contains(@src, 'https://s3-media1.fl.yelpcdn.com/bphoto/pDZ8YQ098hOq1RzwbFFyWA/o.jpg')]")
+      expect(page).to have_link('See Xcel Energy on Yelp')
+      expect(page).to have_content('1099 18th St, Ste 3000, Denver, CO, 80202')
+      expect(page).to have_content('(800) 895-4999')
+      expect(page).to have_content(1.02)
 		end
 	end
 end

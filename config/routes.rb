@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get '/address', to: 'service_category#index'
   get '/:location/:services', to: 'services#index', as: :service_index
   get '/:location/:services/:type', to: 'service_types#index'
+  get '/:location/:services/:type/:id', to: 'service_types#show'
 end

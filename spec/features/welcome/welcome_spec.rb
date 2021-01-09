@@ -35,14 +35,14 @@ describe 'As an authenticated user' do
 
       user_count = User.count
       expect(user_count).to eq(1)
-      user = User.first
+      User.first
 
       expect(page).to have_link('Log Out')
     end
 
     it 'Returning Google user is logged in' do
       stub_omniauth
-      user = create(:omniauth_mock_user)
+      create(:omniauth_mock_user)
       user_count = User.count
       expect(user_count).to eq(1)
 

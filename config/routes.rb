@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'dashboard#index', as: :dashboard
   get '/team', to: 'team#index', as: :team
   get '/logout', to: 'sessions#destroy'
-  get '/utilities', to: 'utilities#index', as: :utilities_discover 
+  get '/utilities', to: 'utilities#index', as: :utilities_discover
 end

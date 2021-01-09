@@ -6,12 +6,17 @@ class SessionsController < ApplicationController
     user.uid = request_hash[:uid]
     user.token = request_hash[:credentials][:token]
     user.name = request_hash[:info][:name]
+    user.email = request_hash[:info][:email]
     user.save
     session[:user_id] = user.id
     redirect_to dashboard_path
   end
 
-  def destroy; end
+  def destroy
+    session.delete(:user_id)
+    flash[:success] = 'You have been logged out!'
+    redirect_to root_path
+  end
 
   private
 

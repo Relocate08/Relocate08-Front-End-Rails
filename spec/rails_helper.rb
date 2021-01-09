@@ -72,4 +72,44 @@ RSpec.configure do |config|
       with.library :rails
     end
   end
+
+  def stub_omniauth
+    OmniAuth.config.test_mode = true
+    omniauth_google_hash = {
+      provider: 'google_oauth2',
+      uid: '100000000000000000000',
+      info: {
+        name: 'John Smith',
+        email: 'john@example.com',
+        unverified_email: 'john@example.com',
+        email_verified: true,
+        first_name: 'John',
+        last_name: 'Smith',
+        image: 'https://lh4.googleusercontent.com/photo.jpg'
+      },
+      credentials: {
+        token: 'MOCK_OMNIAUTH_GOOGLE_TOKEN',
+        refresh_token: 'MOCK_OMNIAUTH_GOOGLE_REFRESH TOKEN',
+        expires_at: DateTime.now,
+        expires: true
+      },
+      extra: {
+        id_token: 'ID_TOKEN',
+
+        raw_info: {
+          sub: '100000000000000000000',
+          name: 'John Smith',
+          given_name: 'John',
+          family_name: 'Smith',
+          picture: 'https://lh4.googleusercontent.com/photo.jpg?sz=50',
+          email: 'john@example.com',
+          email_verified: 'true',
+          locale: 'en'
+        }
+      }
+    }
+    OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new(omniauth_google_hash)
+  end
+
+  config.include FactoryBot::Syntax::Methods
 end

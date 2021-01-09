@@ -20,7 +20,7 @@ describe 'As a user' do
         click_on 'Utilities'
       end
 
-      expect(current_path).to eq('/80211/utilities')
+      expect(current_path).to eq('/80211/Utilities')
       expect(page).to have_content('Utilities')
       expect(page).to have_link('Electricity')
     end

@@ -14,6 +14,7 @@ describe Business do
 		business = Business.new(attr)
 
 		expect(business).to be_a(Business)
+		expect(business.id).to eq('9s8dfs7fsdmsdf')
 		expect(business.name).to eq("Xcel Energy")
 		expect(business.image).to eq("https://s3-media1.fl.yelpcdn.com/bphoto/pDZ8YQ098hOq1RzwbFFyWA/o.jpg")
 		expect(business.url).to eq("https://www.yelp.com/biz/xcel-energy-denver?adjust_creative=zQj4oUhAlRBYo7eV2LOdZA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=zQj4oUhAlRBYo7eV2LOdZA")

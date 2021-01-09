@@ -10,6 +10,12 @@ describe 'As an authenticated user' do
       expect(current_path).to eq(team_path)
     end
 
+    it 'I can follow the link the Privacy Policy link' do
+      visit root_path
+      click_on 'Privacy Policy'
+      expect(current_path).to eq(privacy_path)
+    end
+
     it 'I see general information' do
       app_description = "Moving to a new place is as exciting as it is stressful. Relocate was developed to help alleviate the stress so you can focus on settling in. What makes a home isn’t just the roof you sleep under, but the neighborhood around you. The average person moves approximately 11.7 times in their lifetime, and that means new gyms, new utilities, and new health care providers, among other things. Relocate's user-friendly interface is a quick way to find and compare all the local businesses and necessities around you based on the location you provide."
       visit root_path

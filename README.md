@@ -18,7 +18,7 @@ All three repositories that make up this project can be found [here](https://git
   - [Authors](#authors)
 
 ### Design
-  * The project is split into three repositories, one for Front-End, one for Back-End, and one for a Sinatra Microservice.  This repository in particular is responsible for the user-facing views along with all services and controllers necessary to query our backend's API.  
+  * The project is split into three repositories, implementing a Service Oriented Architecture for future scalability.  This repository in particular is responsible for the user-facing views along with all services and controllers necessary to query our backend's API.  
   * One database is utilized here on the front-end solely for saving limited user information from Google OAuth to log in a user.
 
 ### Setup

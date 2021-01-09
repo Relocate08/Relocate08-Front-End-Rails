@@ -1,0 +1,13 @@
+<h1><%= params[:type] %> Businesses</h1>
+
+<% @businesses.each do |biz| %>
+	<div class='business'>
+
+		<%= image_tag(biz.image) %>
+		<p><%= biz.name %></p>
+		<%= link_to "See #{biz.name} on Yelp", biz.url %>
+		<p><%= biz.location %></p>
+		<p><%= biz.phone %></p>
+		<p><%= biz.distance.round(2) %> miles away</p>
+	</div>
+<% end %>

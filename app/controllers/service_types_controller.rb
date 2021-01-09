@@ -1,16 +1,20 @@
 class ServiceTypesController < ApplicationController
   def index
-    conn = Faraday.new(url: 'https://relocate-back-end-rails.herokuapp.com')
+    @businesses = SearchFacade.all_businesses(params[:location], params[:services], params[:type])
+  end
 
-    response = conn.get("/api/v1/yelp") do |req|
-      req.params[:location] = params[:location]
-      req.params[:service] = params[:service]
-      req.params[:type] = params[:type]
-    end
+  def show
+    @business = SearchFacade.a_business(params[:location], params[:services], params[:type], params[:id])
+    # conn = Faraday.new(url: 'https://relocate-back-end-rails.herokuapp.com')
 
-    json = JSON.parse(response.body, symbolize_names: true)
-    @businesses = json[:data].map do |biz_data|
-      Business.new(biz_data)
-    end
+    # response = conn.get("/api/v1/yelp") do |req|
+    #   req.params[:location] = params[:location]
+    #   req.params[:service] = params[:service]
+    #   req.params[:type] = params[:type]
+    #   req.params[:id] = params[:id]
+    # end
+
+    # json = JSON.parse(response.body, symbolize_names: true)
+    # @business = Business.new(json)
   end
 end

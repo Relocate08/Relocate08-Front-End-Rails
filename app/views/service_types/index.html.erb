@@ -2,12 +2,7 @@
 
 <% @businesses.each do |biz| %>
 	<div class='business'>
-
-		<%= image_tag(biz.image) %>
 		<%= link_to biz.name, "/#{params[:location]}/#{params[:service]}/#{params[:type]}/#{biz.id}" %>
-		<%= link_to "See #{biz.name} on Yelp", biz.url %>
-		<p><%= biz.location %></p>
-		<p><%= biz.phone %></p>
 		<p><%= biz.distance.round(2) %> miles away</p>
 	</div>
 <% end %>

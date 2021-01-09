@@ -1,6 +1,7 @@
 {
   "data": [
       {
+          "id": "9s8dfs7fsdmsdf",
           "name": "Xcel Energy",
           "image": "https://s3-media1.fl.yelpcdn.com/bphoto/pDZ8YQ098hOq1RzwbFFyWA/o.jpg",
           "url": "https://www.yelp.com/biz/xcel-energy-denver?adjust_creative=zQj4oUhAlRBYo7eV2LOdZA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=zQj4oUhAlRBYo7eV2LOdZA",
@@ -9,6 +10,7 @@
           "distance":  1.019879293317
       },
       {
+          "id": "pas9w4rg4io",
           "name": "Mountain Parks Electric",
           "image": "",
           "url": "https://www.yelp.com/biz/mountain-parks-electric-granby?adjust_creative=zQj4oUhAlRBYo7eV2LOdZA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=zQj4oUhAlRBYo7eV2LOdZA",
@@ -17,6 +19,7 @@
           "distance": 2.85732154944
       },
       {
+          "id": "sd834twow8r2",
           "name": "IREA",
           "image": "",
           "url": "https://www.yelp.com/biz/irea-sedalia?adjust_creative=zQj4oUhAlRBYo7eV2LOdZA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=zQj4oUhAlRBYo7eV2LOdZA",

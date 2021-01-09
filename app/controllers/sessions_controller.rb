@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
     user.email = request_hash[:info][:email]
     user.save
     session[:user_id] = user.id
+    flash[:success] = "You are now logged in!"
     redirect_to dashboard_path
   end
 

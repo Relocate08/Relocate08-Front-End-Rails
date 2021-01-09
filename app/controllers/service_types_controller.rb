@@ -9,11 +9,8 @@ class ServiceTypesController < ApplicationController
     end
 
     json = JSON.parse(response.body, symbolize_names: true)
-    @businesses = json.map do |biz_data|
+    @businesses = json[:data].map do |biz_data|
       Business.new(biz_data)
     end
-
-    binding.pry
-
   end
 end

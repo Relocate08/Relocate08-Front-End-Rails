@@ -1,3 +1,36 @@
-<h1>Welcome, <%= current_user.name %>!</h1>
+<div class="container">
+  <div class="row justify-content-start">
+    <div class="col-md-8 pad-25-top">
+      <h1 class="align-top">Services Search</h1>
+    </div>
+    <div class="col-md-4 pad-30-top">
+      <%= form_with url: utilities_discover_path , method: :get, local: true do |f|%>
+        <%= f.search_field :search, placeholder: 'Enter your location' %>
+        <%= f.submit 'Search' , class: "btn btn-warning" %>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-<h2>Select an area to search!</h2>
+<hr>
+<div class="container">
+  <div class="row justify-content-start">
+    <div class="col-md-8 pad-25-top">
+      <h1 class="align-top">Saved Searches</h1>
+    </div>
+  </div>
+</div>
+<section class="movie-details">
+  <div class="container">
+    <div class="row justify-content-md-right">
+      <div class="col col-md-4">
+        <strong>Business:</strong>
+
+      </div>
+      <div class="col col-md-4">
+        <strong>URL:</strong>
+
+      </div>
+    </div>
+  </div>
+</section>

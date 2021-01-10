@@ -27,14 +27,11 @@
         <li class="nav-item">
           <a class="nav-link" href="<%= privacy_path %>">Privacy Policy</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="<%= logout_path %>">Logout</a>
-        </li>
       </ul>
     </div>
   </nav>
 <% else %>
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark" id="navbar-<%= current_user.id %>">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
@@ -51,12 +48,13 @@
           <a class="nav-link" href="<%= privacy_path %>">Privacy Policy</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<%= logout_path %>">Logout</a>
+          <a class="nav-link" href="<%= logout_path %>">Logout <%= current_user.name %></a>
         </li>
       </ul>
     </div>
   </nav>
 <% end %>
+
     <%= yield %>
   </body>
 </html>

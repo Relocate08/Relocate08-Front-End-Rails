@@ -22,14 +22,25 @@
 //  background-repeat: no-repeat;
 // }
 
+.pad-25-top {
+  padding-top: 25px;
+}
+
+.pad-50-bottom {
+  padding-bottom: 50px;
+}
+
+.pad-30-top {
+  padding-top: 30px;
+}
 
 body {
   margin: 15px 30px;
   font: 15px Verdana, sans-serif;
-  background-image: url(/assets/welcome.jpg);
+  // background-image: url(/assets/welcome.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  color: gray;
+  background-color: lightgray;
 }
 
 // li {
@@ -68,6 +79,21 @@ body {
 .group-card {
   background-color: LightGray;
   color: black;
+  padding: 20px;
+  border: solid 1px #999;
+  box-shadow:  0 0 10px  rgba(0,12,0,0.6);
+  -moz-box-shadow: 0 0 10px  rgba(0,12,0,0.6);
+  -webkit-box-shadow: 0 0 10px  rgba(0,12,0,0.6);
+  -o-box-shadow: 0 0 10px  rgba(0,12,0,0.6);
+  border-top-left-radius:12px;
+  border-top-right-radius:12px;
+  border-bottom-left-radius:12px;
+  border-bottom-right-radius:12px;
+};
+
+.login-card {
+  width: 120px;
+  background-color: #ffc107;
   padding: 20px;
   border: solid 1px #999;
   box-shadow:  0 0 10px  rgba(0,12,0,0.6);

@@ -1,0 +1,8 @@
+<h1><%= params[:type] %> Businesses</h1>
+
+<% @businesses.each do |biz| %>
+	<div class='business'>
+		<%= link_to biz.name, "/#{params[:location]}/#{params[:service]}/#{params[:type]}/#{biz.id}" %>
+		<p><%= biz.distance.round(2) %> miles away</p>
+	</div>
+<% end %>

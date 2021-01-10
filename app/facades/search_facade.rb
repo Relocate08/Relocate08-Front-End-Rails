@@ -6,8 +6,8 @@ class SearchFacade
     end
   end
 
-  def self.a_business(location, category, type, id)
-    json = CategoryService.a_business(location, category, type, id)
+  def self.a_business(id)
+    json = CategoryService.a_business(id)
     Business.new(json)
   end
 end

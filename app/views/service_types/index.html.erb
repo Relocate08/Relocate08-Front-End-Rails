@@ -1,8 +1,8 @@
-<h1><%= params[:type] %> Businesses</h1>
+<h1><%= params[:type].capitalize %> Businesses</h1>
 
 <% @businesses.each do |biz| %>
 	<div class='business'>
-		<%= link_to biz.name, "/#{params[:location]}/#{params[:service]}/#{params[:type]}/#{biz.id}" %>
+		<%= link_to biz.name, "/businesses/#{biz.id}", params: {name: 'cookie'} %>
 		<p><%= biz.distance.round(2) %> miles away</p>
 	</div>
 <% end %>

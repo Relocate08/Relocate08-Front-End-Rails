@@ -4,6 +4,6 @@ class ServiceTypesController < ApplicationController
   end
 
   def show
-    @business = SearchFacade.a_business(params[:location], params[:services], params[:type], params[:id])
+    @business = SearchFacade.a_business(params[:id])
   end
 end

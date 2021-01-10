@@ -7,10 +7,11 @@ describe 'As a logged in user' do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
       json_response = File.read('spec/fixtures/show_business_page.json')
-      stub_request(:get, 'https://relocate-back-end-rails.herokuapp.com/api/v1/yelp?id=9s8dfs7fsdmsdf&location=80211&service=utilities&type=Electricity')
-        .to_return(status: 200, body: json_response, headers: {})
+      stub_request(:get, 'https://relocate-back-end-rails.herokuapp.com/api/v1/yelp/businesses/9s8dfs7fsdmsdf').
 
-      visit '/80211/utilities/Electricity/9s8dfs7fsdmsdf'
+        to_return(status: 200, body: json_response, headers: {})
+
+      visit '/businesses/9s8dfs7fsdmsdf'
 
       within '.biz-info' do
         expect(page).to have_content('Xcel Energy')

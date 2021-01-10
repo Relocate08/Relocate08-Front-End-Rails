@@ -1,3 +1,11 @@
+<h1>Relocate</h1>
 <h1>Welcome, <%= current_user.name %>!</h1>
 
 <h2>Select an area to search!</h2>
+
+<div class="location-search">
+  <%= form_with  url: '/address', method: :get, local: true do |f| %>
+    <%= f.text_field :location, placeholder: 'Enter Address' %>
+    <%= f.submit 'Search Location' %>
+  <% end %>
+</div>

@@ -6,8 +6,13 @@ Rails.application.routes.draw do
   get '/auth/google_oauth2', as: :google_login
   get '/auth/google_oauth2/callback', to: 'sessions#create'
   get '/dashboard', to: 'dashboard#index', as: :dashboard
+
+  get '/address', to: 'service_category#index'
+  get '/:location/:services', to: 'services#index', as: :service_index
+  get '/:location/:services/:type', to: 'service_types#index'
+  get '/:location/:services/:type/:id', to: 'service_types#show'
+
   get '/team', to: 'team#index', as: :team
   get '/privacy', to: 'privacy#index', as: :privacy
   get '/logout', to: 'sessions#destroy'
-  get '/utilities', to: 'utilities#index', as: :utilities_discover
 end

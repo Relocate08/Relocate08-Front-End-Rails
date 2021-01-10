@@ -1,4 +1,4 @@
-{
+{  "attributes": {
   "id": "9s8dfs7fsdmsdf",
   "name": "Xcel Energy",
   "image": "https://s3-media1.fl.yelpcdn.com/bphoto/pDZ8YQ098hOq1RzwbFFyWA/o.jpg",
@@ -6,4 +6,5 @@
   "location": "1099 18th St, Ste 3000, Denver, CO, 80202",
   "phone": "(800) 895-4999",
   "distance":  1.019879293317
+ }
 }

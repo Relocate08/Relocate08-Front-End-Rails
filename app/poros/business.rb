@@ -3,11 +3,11 @@ class Business
 
   def initialize(data)
     @id = data[:id]
-    @name = data[:name]
-    @image = data[:image]
-    @url = data[:url]
-    @location = data[:location]
-    @phone = data[:phone]
-    @distance = data[:distance]
+    @name = data[:attributes][:name]
+    @image = data[:attributes][:image]
+    @url = data[:attributes][:url]
+    @location = data[:attributes][:location]
+    @phone = data[:attributes][:phone]
+    @distance = data[:attributes][:distance]
   end
 end

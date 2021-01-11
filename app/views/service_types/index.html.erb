@@ -2,7 +2,7 @@
 
 <% @businesses.each do |biz| %>
 	<div class='business'>
-		<%= link_to biz.name, "/businesses/#{biz.id}", params: {name: 'cookie'} %>
+		<%= link_to biz.name, "/businesses/#{biz.id}" %>
 		<p><%= biz.distance.round(2) %> miles away</p>
 	</div>
 <% end %>

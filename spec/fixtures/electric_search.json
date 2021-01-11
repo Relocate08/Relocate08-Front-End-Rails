@@ -1,6 +1,6 @@
 {
   "data": [
-      {
+      {  "attributes": {
           "id": "9s8dfs7fsdmsdf",
           "name": "Xcel Energy",
           "image": "https://s3-media1.fl.yelpcdn.com/bphoto/pDZ8YQ098hOq1RzwbFFyWA/o.jpg",
@@ -8,8 +8,10 @@
           "location": "1099 18th St, Ste 3000, Denver, CO, 80202",
           "phone": "(800) 895-4999",
           "distance":  1.019879293317
+         }
       },
-      {
+      {   "attributes": {
+
           "id": "pas9w4rg4io",
           "name": "Mountain Parks Electric",
           "image": "",
@@ -17,8 +19,9 @@
           "location": "321 W Agate Ave, Granby, CO 80446",
           "phone": "(970) 887-3378",
           "distance": 2.85732154944
+        }
       },
-      {
+      {    "attributes": {
           "id": "sd834twow8r2",
           "name": "IREA",
           "image": "",
@@ -26,6 +29,8 @@
           "location": "5496 N Hwy 85, Sedalia, CO 80135",
           "phone": "(800) 332-9540",
           "distance": 3.4054643139
+
+        }
       }
   ]
 }

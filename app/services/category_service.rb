@@ -10,7 +10,7 @@ class CategoryService
   end
 
   def self.conn
-    Faraday.new(url: ENV['HEROKU_BACKEND_DOMAIN'])
+    Faraday.new(url: 'https://relocate-back-end-rails.herokuapp.com')
   end
 end
 

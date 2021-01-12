@@ -49,6 +49,10 @@ $gold: #ffc107;
   padding-top: 30px;
 }
 
+.pad-100-top {
+  padding-top: 100px;
+}
+
 body {
   // margin: 15px 30px;
   font-family: 'Rubik', sans-serif;
@@ -232,4 +236,19 @@ hr {
   color: #dddedf;
   width: 300px;
   height: 160px;
+}
+
+.btn-group {
+  padding-right: 25px;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("img_girl.jpg");
+  /* Full height */
+  height: 50%; 
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

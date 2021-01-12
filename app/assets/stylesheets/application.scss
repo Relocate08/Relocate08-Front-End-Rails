@@ -44,7 +44,7 @@
 
 body {
   // margin: 15px 30px;
-  font: 15px Verdana, sans-serif;
+  font-family: 'Rubik', sans-serif;
   // background-image: url(/assets/welcome.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -108,8 +108,8 @@ body {
 };
 
 .team-info {
-  width: 200px;
-  background-color: #ffc107;
+  width: 250px;
+  background-color: #661D3D;
   padding: 10px;
   border: solid 1px #999;
   box-shadow:  0 0 10px  rgba(0,12,0,0.6);
@@ -154,28 +154,29 @@ hr {
 
 .footer {
   padding-top: 15px;
-  position: absolute;
-  bottom: 0;
+  position: fixed;
+  bottom: 0px;
   width: 100%;
+  z-index: 98;
   /* Set the fixed height of the footer here */
   height: 60px;
-  background-color:   #125966 !important;
+  background-color:   #125966;
 }
 
 #myBtn {
-  display: none; /* Hidden by default */
   position: fixed; /* Fixed/sticky position */
   bottom: 20px; /* Place the button at the bottom of the page */
   right: 30px; /* Place the button 30px from the right */
   z-index: 99; /* Make sure it does not overlap */
   border: none; /* Remove borders */
   outline: none; /* Remove outline */
-  background-color: red; /* Set a background color */
+  background-color: #125966; /* Set a background color */
   color: white; /* Text color */
   cursor: pointer; /* Add a mouse pointer on hover */
   padding: 15px; /* Some padding */
   border-radius: 10px; /* Rounded corners */
-  font-size: 18px; /* Increase font size */
+  font-size: 10px; /* Increase font size */
+  font-family: 'Rubik',sans-serif;
 }
 
 #myBtn:hover {
@@ -192,7 +193,8 @@ hr {
 
 #main {
     width: 80%;
-    padding-top: 50px;
+    padding-top: 30px;
+    padding-bottom: 100px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -204,4 +206,12 @@ hr {
 .orange {
   background-color: #ffc107;
   color: #495057;
+}
+
+.gutter10 {
+  margin: 10px;
+}
+
+.light-text {
+  color: #f4f4f4;
 }

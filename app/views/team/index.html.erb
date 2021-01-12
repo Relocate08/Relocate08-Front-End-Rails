@@ -1,51 +1,32 @@
-<h3>Overview</h3> 
-<p>Getting setup in a new home is like unpacking your suitcase after a vacation, tedious and time consuming. After 
-  you've spent time packing and traveling, the last thing you want to do is spend time researching utility 
-  companies, internet service providers, and social events. Relocate aims to ease the chaos of moving and provide a 
+<h3 class="center">Overview</h3>
+<p class="center pad-25-bottom">Getting setup in a new home is like unpacking your suitcase after a vacation, tedious and time consuming. After
+  you've spent time packing and traveling, the last thing you want to do is spend time researching utility
+  companies, internet service providers, and social events. Relocate aims to ease the chaos of moving and provide a
   resource for you to discover services in your new hometown.</p>
 <hr>
-<h3>Our Team</h3>
-<p>We're a team of back-end developers enrolled in Turing School of Software and Design. You can see our
+<h3 class="center pad-25-top">Our Team</h3>
+<p class="center pad-25-bottom">We're a team of back-end developers enrolled in Turing School of Software and Design. You can see our
   <a href="https://github.com/Relocate08/">github repositories here.</a></p>
-<section class="team-info card pad-25-top">
-  <div class="team-image pad-25-top">
-    <h2 class="center">Hanna Davis</h2><br>
-    <a href="https://www.linkedin.com/in/hanna-davis/">
-      <img alt="linkedin" src="https://img.icons8.com/nolan/64/linkedin.png" width=50" height="50">
-    </a>
-    <a href="https://www.linkedin.com/in/hanna-davis/">
-      <img alt="github" src="https://img.icons8.com/nolan/64/github.png" width=50" height="50">
-    </a>
+<div class="container">
+  <div class="row">
+    <% @members.each do |member| %>
+      <div class="team-info card pad-25-top gutter10">
+        <div class="team-image pad-25-top">
+          <div class="card-title name center pad-25-bottom">
+            <h3 class="light-text">
+              <%= member[:name] %>
+            </h3>
+          </div>
+          <div class="center">
+            <a href= <%= member[:linkedin] %> >
+              <img alt="linkedin" src="https://img.icons8.com/nolan/64/linkedin.png" width=50" height="50">
+            </a>
+            <a href= <%= member[:github] %>>
+              <img alt="github" src="https://img.icons8.com/nolan/64/github.png" width=50" height="50">
+            </a>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
-</section>
-<ul>
-  <li>Hanna Davis</li>
-  
-  <li>Zach Sterns</li>
-  <p><a href="https://www.linkedin.com/in/zach-stearns/">Linkedin</a> | <a href="https://github.com/Stearnzy">Github</a></p>
-  
-  <li>Jose Lopez</li>
-  <p><a href="https://www.linkedin.com/in/jose-lopez-0551a01a1/">Linkedin</a> | <a href="https://github.com/JoseLopez235">Github</a></p>
-  
-  <li>Christopher Allbritton</li>
-  <p><a href="https://www.linkedin.com/in/christopher-allbritton/">Linkedin</a> | <a href="https://github.com/Callbritton">Github</a></p>
-  
-  <li>John Kim</li>
-  <p><a href="https://www.linkedin.com/in/abcdefghijohn/">Linkedin</a> | <a href="https://github.com/abcdefghijohn">Github</a></p>
-  
-  <li>Brett Sherman</li>
-  <p><a href="https://www.linkedin.com/in/brettshermanll/">Linkedin</a> | <a href="https://github.com/BJSherman80">Github</a></p>
-  
-  <li>Dani Coleman</li>
-  <p><a href="https://www.linkedin.com/in/dcoleman-21/">Linkedin</a> | <a href="https://github.com/dcoleman21">Github</a></p>
-  
-  <li>Hope Gochnour</li>
-  <p><a href="https://www.linkedin.com/in/hope-gochnour-3056aa1ba/">Linkedin</a> | <a href="https://github.com/hopesgit">Github</a>
-  
-  <li>Jake Heft</li>
-  <p><a href="https://www.linkedin.com/in/jakeheft/">Linkedin</a> | <a href="https://github.com/jakeheft">Github</a>
-  
-  <li>Kevin Cuadros</li>
-  <p><a href="https://www.linkedin.com/in/kevin-cuadros-2bb4551a1/">Linkedin</a> | <a href="https://github.com/kevxo">Github</a>
-  </p>
-</ul>
+</div>

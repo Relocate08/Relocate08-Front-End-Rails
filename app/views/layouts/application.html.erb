@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+
   </head>
 
   <body>
@@ -17,7 +18,7 @@
             <li class="nav-item active">
               <a class="nav-link" href="<%= root_path %>">Home</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
               <a class="nav-link" href="<%= team_path %>">The Team</a>
             </li>
           </ul>
@@ -32,16 +33,19 @@
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
+              <a class="nav-link" href="<%= root_path %>">Home</a>
+            </li>
+            <li class="nav-item active">
               <a class="nav-link" href="<%= dashboard_path %>">Profile</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
               <a class="nav-link" href="<%= team_path %>">The Team</a>
             </li>
           </ul>
         </div>
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
+            <li class="nav-item active">
               <a class="nav-link" href="<%= logout_path %>">Logout <%= current_user.name %></a>
             </li>
           </ul>
@@ -49,17 +53,17 @@
       </nav>
     <% end %>
 
-    <section id="main">
+    <section class="pad-25-bottom" id="main">
       <%= yield %>
     </section>
 
     <footer class="footer">
       <div class="container text-center">
         <a class="text-muted credit" href=" <%= privacy_path %>" style="color:#fff">Privacy Policy</a>
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
       </div>
 
-      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-      
+
     </footer>
   </body>
 </html>

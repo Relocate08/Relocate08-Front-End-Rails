@@ -16,3 +16,4 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+//= require back_to_top

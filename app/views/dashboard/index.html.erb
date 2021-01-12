@@ -7,13 +7,12 @@
       <div class="location-search">
         <%= form_with  url: '/address', method: :get, local: true do |f| %>
           <%= f.text_field :location, placeholder: 'Enter Address' %>
-          <%= f.submit 'Search Location' %>
+          <%= f.submit 'Search Location', class: "orange" %>
         <% end %>
       </div>
     </div>
   </div>
 </div>
-
 <hr>
 <div class="container">
   <div class="row justify-content-start">

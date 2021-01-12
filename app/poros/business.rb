@@ -2,7 +2,7 @@ class Business
   attr_reader :id, :name, :image, :url, :location, :phone, :distance
 
   def initialize(data)
-    @id = data[:id]
+    @id = data[:attributes][:id]
     @name = data[:attributes][:name]
     @image = data[:attributes][:image]
     @url = data[:attributes][:url]

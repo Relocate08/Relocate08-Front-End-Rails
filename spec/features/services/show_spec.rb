@@ -16,8 +16,9 @@ describe 'As a logged in user' do
 
       visit '/80211/utilities/electricity'
 
+
       click_link 'Xcel Energy'
-      expect(current_path).to eq('/businesses/')
+      expect(current_path).to eq('/businesses/9s8dfs7fsdmsdf')
 
       within '.biz-info' do
         expect(page).to have_content('Xcel Energy')

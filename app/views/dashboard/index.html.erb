@@ -4,10 +4,12 @@
       <h1 class="align-top">Services Search</h1>
     </div>
     <div class="col-md-4 pad-30-top">
-      <%= form_with url: utilities_discover_path , method: :get, local: true do |f|%>
-        <%= f.search_field :search, placeholder: 'Enter your location' %>
-        <%= f.submit 'Search' , class: "btn btn-warning" %>
-      <% end %>
+      <div class="location-search">
+        <%= form_with  url: '/address', method: :get, local: true do |f| %>
+          <%= f.text_field :location, placeholder: 'Enter Address' %>
+          <%= f.submit 'Search Location' %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

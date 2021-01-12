@@ -3,8 +3,8 @@ require 'rails_helper'
 describe Business do
   it 'exists' do
     attr = {
-			id: '9s8dfs7fsdmsdf',
       attributes: {
+        id: '9s8dfs7fsdmsdf',
         name: 'Xcel Energy',
         image: 'https://s3-media1.fl.yelpcdn.com/bphoto/pDZ8YQ098hOq1RzwbFFyWA/o.jpg',
         url: 'https://www.yelp.com/biz/xcel-energy-denver?adjust_creative=zQj4oUhAlRBYo7eV2LOdZA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=zQj4oUhAlRBYo7eV2LOdZA',

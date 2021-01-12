@@ -5,9 +5,4 @@ class SearchFacade
       Business.new(biz_data)
     end
   end
-
-  def self.a_business(id)
-    json = CategoryService.a_business(id)
-    Business.new(json)
-  end
 end

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'dashboard#index', as: :dashboard
 
   get '/address', to: 'service_category#index'
-  get '/businesses/:id', to: 'service_types#show'
+  get '/businesses', to: 'service_types#show'
   get '/:location/:services', to: 'services#index', as: :service_index
   get '/:location/:services/:type', to: 'service_types#index'
 

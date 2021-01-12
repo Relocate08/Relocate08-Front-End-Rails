@@ -2,7 +2,8 @@ class TeamController < ApplicationController
   def index
     @members = [{'name': 'Hanna Davis', 'linkedin': 'https://www.linkedin.com/in/hanna-davis/', 'github':
     'https://img.icons8.com/nolan/64/linkedin.png'},
-    {'name': 'Zach Sterns', 'linkedin': 'https://www.linkedin.com/in/zach-stearns/', 'github':
+    {'name': 'Hope Gochnour', 'linkedin': 'https://www.linkedin.com/in/hope-mcgee/', 'github': 'https://github.com/hopesgit'},
+    {'name': 'Zach Stearns', 'linkedin': 'https://www.linkedin.com/in/zach-stearns/', 'github':
     'https://github.com/Stearnzy'},
     {'name': 'Jose Lopez', 'linkedin': 'https://www.linkedin.com/in/jose-lopez-0551a01a1/', 'github':
     'https://github.com/JoseLopez235'},

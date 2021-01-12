@@ -1,22 +1,28 @@
-<h1 class='center'>Service Categories</h1>
-
+<h1 class="center pad-25-bottom">Service Categories</h1>
 <hr>
+<center class="pad-100-top">
+  <div class="btn-group">
+    <a href="<%= " /#{params[:location]}/utilities" %>" class="btn button-service">
+      <%= image_tag "utilities" , {size: "110" } %>
+        <h2>Utilities</h2>
+    </a>
+  </div>
 
-<div class="btn-group">
-  <a href="<%= " /#{params[:location]}/Utilities" %>" class="btn button-service">
-    <%= image_tag "utilities" , {size: "110" }  %>
-    <h2>Utilities</h2>
-  </a>
-</div>
-<div class="btn-group">
-  <a href="<%= " /#{params[:location]}/recreation" %>" class="btn button-service">
-    <%= image_tag "bike-path" , {size: "110" }  %>
-    <h2>Recreation</h2>
-  </a>
-</div>
-<div class="btn-group">
-  <a href="<%= " /#{params[:location]}/homeservices" %>" class="btn button-service">
-    <%= image_tag "house" , {size: "110" }  %>
-    <h2>Home Services</h2>
-  </a>
-</div>
+  <div class="btn-group">
+    <a href="<%= " /#{params[:location]}/recreation" %>" class="btn button-service">
+      <%= image_tag "recreation" , {size: "110" } %>
+        <h2 class=>Recreation</h2>
+    </a>
+  </div>
+
+  <div class="btn-group">
+    <a href="<%= " /#{params[:location]}/homeservices" %>" class="btn button-service">
+      <%= image_tag "house" , {size: "110" } %>
+        <h2>Home Services</h2>
+    </a>
+  </div>
+
+  <div class="bg">
+      <%= image_tag "drowning_in_boxes" %>
+  </div>
+</center>

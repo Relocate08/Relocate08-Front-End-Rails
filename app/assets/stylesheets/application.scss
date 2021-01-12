@@ -29,6 +29,10 @@ $gold: #ffc107;
   padding-top: 25px;
 }
 
+.pad-25-right {
+  padding-right: 25px;
+}
+
 .pad-50-top {
   padding-top: 50px;
 }
@@ -43,6 +47,10 @@ $gold: #ffc107;
 
 .pad-30-top {
   padding-top: 30px;
+}
+
+.pad-100-top {
+  padding-top: 100px;
 }
 
 body {
@@ -199,15 +207,15 @@ hr {
 // }
 
 #main {
-    width: 80%;
-    padding-top: 30px;
-    padding-bottom: 100px;
-    margin-left: auto;
-    margin-right: auto;
+  width: 80%;
+  padding-top: 30px;
+  padding-bottom: 100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .marg-r-20 {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 .orange {
@@ -228,4 +236,19 @@ hr {
   color: #dddedf;
   width: 300px;
   height: 160px;
+}
+
+.btn-group {
+  padding-right: 25px;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("img_girl.jpg");
+  /* Full height */
+  height: 50%; 
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

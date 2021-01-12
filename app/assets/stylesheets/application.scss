@@ -109,7 +109,7 @@ body {
 
 .team-info {
   width: 200px;
-  background-color: #ffc107;
+  background-color: #661d3d;
   padding: 10px;
   border: solid 1px #999;
   box-shadow:  0 0 10px  rgba(0,12,0,0.6);
@@ -154,23 +154,23 @@ hr {
 
 .footer {
   padding-top: 15px;
-  position: absolute;
-  bottom: 0;
+  position: fixed;
+  bottom: 0px;
   width: 100%;
+  z-index: 98;
   /* Set the fixed height of the footer here */
   height: 60px;
-  background-color:   #125966 !important;
+  background-color:   #125966;
 }
 
 #myBtn {
-  display: none; /* Hidden by default */
   position: fixed; /* Fixed/sticky position */
   bottom: 20px; /* Place the button at the bottom of the page */
   right: 30px; /* Place the button 30px from the right */
   z-index: 99; /* Make sure it does not overlap */
   border: none; /* Remove borders */
   outline: none; /* Remove outline */
-  background-color: red; /* Set a background color */
+  background-color: #125966; /* Set a background color */
   color: white; /* Text color */
   cursor: pointer; /* Add a mouse pointer on hover */
   padding: 15px; /* Some padding */
@@ -204,4 +204,8 @@ hr {
 .orange {
   background-color: #ffc107;
   color: #495057;
+}
+
+.gutter10 {
+  margin: 10px;
 }

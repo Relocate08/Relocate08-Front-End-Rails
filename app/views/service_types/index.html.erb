@@ -2,7 +2,7 @@
 
 <% @businesses.each do |biz| %>
 	<div class='business'>
-		<%= link_to biz.name, "/businesses/#{biz.id}" %>
+		<%= link_to biz.name, "/businesses/#{biz.id}?name=#{biz.name}&image=#{biz.image}&url=#{biz.url}&location=#{biz.location}&phone=#{biz.phone}&distance=#{biz.distance}" %>
 		<p><%= biz.distance.round(2) %> miles away</p>
 	</div>
 <% end %>

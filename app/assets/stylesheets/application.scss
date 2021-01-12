@@ -21,6 +21,9 @@
 //  background-size: cover;
 //  background-repeat: no-repeat;
 // }
+$burgundy:  #661D3D;
+$dark-blue: #125966;
+$gold: #ffc107;
 
 .pad-25-top {
   padding-top: 25px;
@@ -99,7 +102,7 @@ body {
 
 .login-card {
   width: 120px;
-  background-color: #ffc107;
+  background-color: $gold;
   padding: 20px;
   border-top-left-radius:12px;
   border-top-right-radius:12px;
@@ -109,7 +112,7 @@ body {
 
 .team-info {
   width: 250px;
-  background-color: #661D3D;
+  background-color: $burgundy;
   padding: 10px;
   border: solid 1px #999;
   box-shadow:  0 0 10px  rgba(0,12,0,0.6);
@@ -127,7 +130,7 @@ body {
 };
 
 .navbar {
- background-color:   #125966 !important;
+ background-color: $dark-blue !important;
 };
 
 .navbar-nav > li{
@@ -137,12 +140,16 @@ body {
   padding-bottom: 8px;
 };
 
+.navbar-nav li a {
+ line-height: 50px;
+}
+
 h3 {
-  color: #561227;
+  color: $burgundy;
 };
 
 h1 {
-  color: #561227;
+  color: $burgundy;
 };
 
 hr {
@@ -160,7 +167,7 @@ hr {
   z-index: 98;
   /* Set the fixed height of the footer here */
   height: 60px;
-  background-color:   #125966;
+  background-color: $dark-blue;
 }
 
 #myBtn {
@@ -170,7 +177,7 @@ hr {
   z-index: 99; /* Make sure it does not overlap */
   border: none; /* Remove borders */
   outline: none; /* Remove outline */
-  background-color: #125966; /* Set a background color */
+  background-color: $dark-blue; /* Set a background color */
   color: white; /* Text color */
   cursor: pointer; /* Add a mouse pointer on hover */
   padding: 15px; /* Some padding */
@@ -204,7 +211,7 @@ hr {
 }
 
 .orange {
-  background-color: #ffc107;
+  background-color: $gold;
   color: #495057;
 }
 

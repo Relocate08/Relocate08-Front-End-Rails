@@ -4,6 +4,11 @@ class ServiceTypesController < ApplicationController
   end
 
   def show
-    @business = SearchFacade.a_business(params[:id])
+    @name = params[:name]
+    @image = params[:image]
+    @url = params[:url]
+    @location = params[:location]
+    @phone = params[:phone]
+    @distance = params[:distance].to_f
   end
 end

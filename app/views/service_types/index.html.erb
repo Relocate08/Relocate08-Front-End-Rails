@@ -1,8 +1,22 @@
-<h1><%= params[:type].capitalize %> Businesses</h1>
-
-<% @businesses.each do |biz| %>
-	<div class='business'>
-		<%= link_to biz.name, "/businesses/#{biz.id}?name=#{biz.name}&image=#{biz.image}&url=#{biz.url}&location=#{biz.location}&phone=#{biz.phone}&distance=#{biz.distance}" %>
-		<p><%= biz.distance.round(2) %> miles away</p>
+<h1 class="center pad-25-top pad-25-bottom"><%= params[:type].capitalize %> Businesses</h1>
+<hr>
+<% if @businesses.empty? %>
+	<h3 class="center pad-100-top">Sorry, we didn't find anything.</h3>
+<% else %>
+	<div class="container pad-100-top">
+		<div class="row">
+			<% @businesses.each do |biz| %>
+				<div class="business-info card pad-25-top gutter10">
+					<div class="team-image pad-25-top">
+						<div class="card-title name center pad-25-bottom">
+							<div class='business'>
+								<%= link_to biz.name, "/businesses/#{biz.id}?name=#{biz.name}&image=#{biz.image}&url=#{biz.url}&location=#{biz.location}&phone=#{biz.phone}&distance=#{biz.distance}"%>
+									<p style="font-size:20px"><%= biz.distance.round(2) %> miles away</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			<% end %>
+		</div>
 	</div>
 <% end %>

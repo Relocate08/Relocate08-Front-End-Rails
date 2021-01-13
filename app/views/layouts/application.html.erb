@@ -7,15 +7,65 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+
   </head>
 
   <body>
-    <nav class="topnav">
-      <% if current_user %>
-      <%= link_to "Dashboard", dashboard_path %>
-      <%= link_to "Log Out", logout_path %>
-      <% end %>
-    </nav>
-    <%= yield %>
+    <% if current_user.nil? %>
+      <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+          <ul class="navbar-nav mr-auto center">
+            <li class="nav-item active">
+              <a class="nav-link" href="<%= root_path %>">Home</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="<%= team_path %>">The Team</a>
+            </li>
+          </ul>
+        </div>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+          <ul class="navbar-nav ml-auto">
+          </ul>
+        </div>
+      </nav>
+    <% else %>
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a href="<%= root_path %>" class="padding: 25px 50px 75px">
+                <%= image_tag "relocate_logo" , {size: "100" } %>
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link pad-25-top" href="<%= dashboard_path %>">Profile</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link  pad-25-top" href="<%= team_path %>">The Team</a>
+            </li>
+          </ul>
+        </div>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="<%= logout_path %>">Logout <%= current_user.name %></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    <% end %>
+
+    <section class="pad-25-bottom" id="main">
+      <%= yield %>
+    </section>
+
+    <footer class="footer">
+      <div class="container text-center">
+        <a class="text-muted credit" href=" <%= privacy_path %>" style="color:#fff">Privacy Policy</a>
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+      </div>
+
+
+    </footer>
   </body>
 </html>

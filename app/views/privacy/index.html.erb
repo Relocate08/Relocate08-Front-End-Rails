@@ -1,6 +1,22 @@
-
-<h1>Relocate's Privacy Page</h1><br>
+<center>
+<div class="text-secondary pad-25-top">
+  <h3><u>Relocate's Privacy Notice:</u></h3><br>
+    <p> When you sign in with your google account, we access your public google user information, but we will only store your
+    google user id, name, and email in our database.</p>
+    <p>Your google contacts will not stored or shared with any other entity.</p>
+    <p>Your information will be used to created a user profile for you on Relocate.</p>
+    <p>Locations you enter will also be saved to our database to provide you
+    with the best user experience catered to your area.</p>
+</div>
 <br>
-<h3>Privacy Notice:</h3>
 <br>
-<p> When you sign in with your google account, we access your public google user information, but we will only store your google user id, name, and email in our database. Locations you enter will also be saved to our database to provide you with the best user experience catered to your area.</p>
+<% if current_user %>
+  <div class="btn btn-warning">
+    <a class="text-secondary" href="<%= dashboard_path %>">Back to Profile</a>
+  </div>
+<% else %>
+  <div class="btn btn-warning">
+    <a class="text-secondary" href="<%= root_path %>">Back to Home</a>
+  </div>
+<% end %>
+</center>

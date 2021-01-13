@@ -24,6 +24,7 @@
 $burgundy:  #661D3D;
 $dark-blue: #125966;
 $gold: #ffc107;
+$bright-blue: #0E9AB3;
 
 .pad-25-top {
   padding-top: 25px;
@@ -165,7 +166,7 @@ hr {
     height: 2px;
     color: #333;
     background-color: #333;
-}
+};
 
 .footer {
   padding-top: 15px;
@@ -176,7 +177,7 @@ hr {
   /* Set the fixed height of the footer here */
   height: 60px;
   background-color: $dark-blue;
-}
+};
 
 #myBtn {
   position: fixed; /* Fixed/sticky position */
@@ -192,11 +193,11 @@ hr {
   border-radius: 10px; /* Rounded corners */
   font-size: 10px; /* Increase font size */
   font-family: 'Rubik',sans-serif;
-}
+};
 
 #myBtn:hover {
   background-color: #555; /* Add a dark-grey background on hover */
-}
+};
 
 // .footer {
 //   padding-top: 80px;
@@ -212,32 +213,45 @@ hr {
   padding-bottom: 100px;
   margin-left: auto;
   margin-right: auto;
-}
+};
 
 .marg-r-20 {
   margin-left: 20px;
-}
+};
 
 .orange {
   background-color: $gold;
   color: #495057;
-}
+};
 
 .gutter10 {
   margin: 10px;
-}
+};
 
 .light-text {
   color: #f4f4f4;
-}
+};
 
 .button-service {
-  background-color: #0E9AB3;
+  background-color: $bright-blue;
   color: #dddedf;
   width: 300px;
   height: 160px;
-}
+};
 
-.btn-group {
-  padding-right: 25px;
-}
+.business-info {
+  width: 300px;
+  background-color: $burgundy;
+  padding: 10px;
+  border: solid 1px #999;
+  box-shadow:  0 0 10px  rgba(0,12,0,0.6);
+  -moz-box-shadow: 0 0 10px  rgba(0,12,0,0.6);
+  -webkit-box-shadow: 0 0 10px  rgba(0,12,0,0.6);
+  -o-box-shadow: 0 0 10px  rgba(0,12,0,0.6);
+  border-top-left-radius:12px;
+  border-top-right-radius:12px;
+  border-bottom-left-radius:12px;
+  border-bottom-right-radius:12px;
+  color: white;
+  font-size: 30px;
+};

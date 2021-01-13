@@ -1,6 +1,41 @@
-<h1><%= params[:services].capitalize %></h1>
+<h1 class="center pad-25-bottom"><%= params[:services].capitalize %></h1>
 
-- <%= link_to 'Electricity', "/#{params[:location]}/utilities/electricity" %>
-- <%= link_to 'Internet Service Providers', "/#{params[:location]}/utilities/isps" %>
-- <%= link_to 'Water Providers', "/#{params[:location]}/utilities/water" %>
-- <%= link_to 'Cable/Satellite Providers', "/#{params[:location]}/utilities/tv" %>
+<hr>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm pad-25-bottom">
+      <div class="btn-group2">
+        <a href="<%= "/#{params[:location]}/utilities/electricity" %>" class="btn button-service">
+          <%= image_tag "electricity", {size: "110" } %>
+          <h2>Electricity</h2>
+        </a>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="btn-group">
+        <a href="<%= "/#{params[:location]}/utilities/isps" %>" class="btn button-service">
+          <%= image_tag "isps", {size: "110" } %>
+          <h2>Internet Service Providers</h2>
+        </a>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="btn-group">
+        <a href="<%= "/#{params[:location]}/utilities/water" %>" class="btn button-service">
+          <%= image_tag "water", {size: "110" } %>
+          <h2>Water</h2>
+        </a>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="btn-group">
+        <a href="<%= " /#{params[:location]}/utilities/tv" %>" class="btn button-service">
+          <%= image_tag "cable-tv" , {size: "110" } %>
+          <h2>Cable/Satellite</h2>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>

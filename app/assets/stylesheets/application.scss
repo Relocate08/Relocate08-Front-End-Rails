@@ -21,45 +21,51 @@
 //  background-size: cover;
 //  background-repeat: no-repeat;
 // }
-.topnav {
-  background-color: #333;
-  overflow: hidden;
+$burgundy:  #661D3D;
+$dark-blue: #125966;
+$gold: #ffc107;
+
+.pad-25-top {
+  padding-top: 25px;
 }
 
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
+.pad-25-right {
+  padding-right: 25px;
 }
 
-
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
+.pad-50-top {
+  padding-top: 50px;
 }
 
-.topnav a.active {
-  background-color: #4CAF50;
-  color: white;
+.pad-25-bottom {
+  padding-bottom: 25px;
+}
+
+.pad-50-bottom {
+  padding-bottom: 50px;
+}
+
+.pad-30-top {
+  padding-top: 30px;
+}
+
+.pad-100-top {
+  padding-top: 100px;
 }
 
 body {
-  margin: 15px 30px;
-  font: 15px Verdana, sans-serif;
-  background-image: url(/assets/welcome.jpg);
+  // margin: 15px 30px;
+  font-family: 'Rubik', sans-serif;
+  // background-image: url(/assets/welcome.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  color: gray;
 }
 
-li {
-  font-family: 'Philosopher';
-  font-size: 20px;
-  margin-left: 15px;
-}
+// li {
+//   font-family: 'Philosopher';
+//   font-size: 20px;
+//   margin-left: 15px;
+// }
 
 .center {
   text-align: center;
@@ -89,7 +95,6 @@ li {
 };
 
 .group-card {
-  background-color: LightGray;
   color: black;
   padding: 20px;
   border: solid 1px #999;
@@ -101,22 +106,138 @@ li {
   border-top-right-radius:12px;
   border-bottom-left-radius:12px;
   border-bottom-right-radius:12px;
-}
+};
+
 .login-card {
   width: 120px;
-  background-color: LightGray;
+  background-color: $gold;
   padding: 20px;
-  border: solid 1px #999;
   border-top-left-radius:12px;
   border-top-right-radius:12px;
   border-bottom-left-radius:12px;
   border-bottom-right-radius:12px;
-}
+};
 
-.login-card:hover {
+.team-info {
+  width: 250px;
+  background-color: $burgundy;
+  padding: 10px;
+  border: solid 1px #999;
   box-shadow:  0 0 10px  rgba(0,12,0,0.6);
   -moz-box-shadow: 0 0 10px  rgba(0,12,0,0.6);
   -webkit-box-shadow: 0 0 10px  rgba(0,12,0,0.6);
   -o-box-shadow: 0 0 10px  rgba(0,12,0,0.6);
-  cursor: pointer;
+  border-top-left-radius:12px;
+  border-top-right-radius:12px;
+  border-bottom-left-radius:12px;
+  border-bottom-right-radius:12px;
+};
+
+.text-grey {
+  color: #495057
+};
+
+.navbar {
+ background-color: $dark-blue !important;
+};
+
+.navbar-nav > li{
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+};
+
+.navbar-nav li a {
+ line-height: 50px;
+}
+
+h3 {
+  color: $burgundy;
+};
+
+h1 {
+  color: $burgundy;
+};
+
+hr {
+    border: none;
+    height: 2px;
+    color: #333;
+    background-color: #333;
+}
+
+.footer {
+  padding-top: 15px;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  z-index: 98;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: $dark-blue;
+}
+
+#myBtn {
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: $dark-blue; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 10px; /* Increase font size */
+  font-family: 'Rubik',sans-serif;
+}
+
+#myBtn:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
+}
+
+// .footer {
+//   padding-top: 80px;
+//   padding-bottom: 50px;
+//   width: 80%;
+//   margin-left: auto;
+//   margin-right: auto;
+// }
+
+#main {
+  width: 80%;
+  padding-top: 30px;
+  padding-bottom: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.marg-r-20 {
+  margin-left: 20px;
+}
+
+.orange {
+  background-color: $gold;
+  color: #495057;
+}
+
+.gutter10 {
+  margin: 10px;
+}
+
+.light-text {
+  color: #f4f4f4;
+}
+
+.button-service {
+  background-color: #0E9AB3;
+  color: #dddedf;
+  width: 300px;
+  height: 160px;
+}
+
+.btn-group {
+  padding-right: 25px;
 }

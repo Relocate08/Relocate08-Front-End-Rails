@@ -5,4 +5,18 @@ class SearchFacade
       Business.new(biz_data)
     end
   end
+
+  def self.a_business(id)
+    json = CategoryService.a_business(id)
+    Business.new(json)
+  end
+
+  def self.location_exists(id)
+    json = BackendService.location_exists(id)
+      if json[:data] == nil
+        return false, nil
+      else
+        return true, json[:data][:attributes][:location]
+      end
+  end
 end

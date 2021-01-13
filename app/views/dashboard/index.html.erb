@@ -5,7 +5,7 @@
 
 <div class="location-search">
   <%= form_with  url: '/address', method: :get, local: true do |f| %>
-    <%= f.text_field :location, placeholder: 'Enter Address' %>
+    <%= f.text_field :location, placeholder: 'Enter Zipcode', min: 10000, max: 99950  %>
     <%= f.submit 'Search Location' %>
   <% end %>
 </div>

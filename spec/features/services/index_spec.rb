@@ -29,7 +29,7 @@ describe 'As a User' do
         .to_return(status: 200, body: json_response, headers: {})
       visit '/80211/utilities'
 
-      click_on 'Internet Service Providers'
+      click_on 'Internet Providers'
 
       expect(current_path).to eq('/80211/utilities/isps')
       within(first('.business')) do

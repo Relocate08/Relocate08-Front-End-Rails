@@ -27,6 +27,11 @@ describe 'As an authenticated user' do
     end
 
     it 'Google OAuth logs in new user' do
+      user = User.new
+      user.id = 1
+
+      allow(User).to receive(:find_or_create_by).and_return(user)
+
       user_count = User.count
       expect(user_count).to eq(0)
 
@@ -36,7 +41,18 @@ describe 'As an authenticated user' do
 
       visit root_path
 
-      click_link 'Login with Google'
+      json_response = File.read('spec/fixtures/location_search_null.json')
+      stub_request(:get, "https://relocate-back-end-rails.herokuapp.com/api/v1/location/1").
+      with(
+        headers: {
+        'Accept'=>'*/*',
+        'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+        'User-Agent'=>'Faraday v1.3.0'
+        }).
+      to_return(status: 200, body: json_response, headers: {})
+
+      click_link 'Login with Google' 
+
       expect(current_path).to eq(dashboard_path)
 
       user_count = User.count
@@ -53,13 +69,23 @@ describe 'As an authenticated user' do
       expect(user_count).to eq(1)
 
       visit root_path
-
+      user = User.last
+      
+      json_response = File.read('spec/fixtures/location_search.json')
+      stub_request(:get, "https://relocate-back-end-rails.herokuapp.com/api/v1/location/#{user.id}").
+      with(
+        headers: {
+          'Accept'=>'*/*',
+          'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+          'User-Agent'=>'Faraday v1.3.0'
+          }).
+          to_return(status: 200, body: json_response, headers: {})
+          
       click_link 'Login with Google'
-
       user_count = User.count
       expect(user_count).to eq(1)
 
-      expect(current_path).to eq(dashboard_path)
+      expect(current_path).to eq(address_path)
       expect(page).to have_link 'Log Out'
     end
   end

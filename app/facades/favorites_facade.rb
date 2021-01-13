@@ -5,4 +5,12 @@ class FavoritesFacade
       Favorite.new(biz)
     end
   end
+
+  def self.save_favorite(user_id, yelp_business_id, business_name)
+    FavoritesService.save_favorite(user_id, yelp_business_id, business_name)
+  end
+
+  def self.delete_favorite(user_id, yelp_business_id)
+    FavoritesService.delete_favorite(user_id, yelp_business_id)
+  end
 end

@@ -24,10 +24,7 @@ describe 'As a user' do
       end
 
       expect(current_path).to eq('/address')
-        #
-        # expect(page).to have_button('Utilities')
-        click_on 'Utilities'
-
+      click_on 'Utilities'
 
       expect(current_path).to eq('/80211/utilities')
       expect(page).to have_content('Utilities')

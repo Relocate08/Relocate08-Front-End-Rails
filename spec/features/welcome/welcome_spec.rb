@@ -59,7 +59,8 @@ describe 'As an authenticated user' do
       expect(user_count).to eq(1)
       User.first
 
-      expect(page).to have_link('Logout John Smith')
+
+      expect(page).to have_link('Logout')
     end
 
     it 'Returning Google user is logged in' do
@@ -70,7 +71,7 @@ describe 'As an authenticated user' do
 
       visit root_path
       user = User.last
-      
+
       json_response = File.read('spec/fixtures/location_search.json')
       stub_request(:get, "https://relocate-back-end-rails.herokuapp.com/api/v1/location/#{user.id}").
       with(
@@ -80,13 +81,14 @@ describe 'As an authenticated user' do
           'User-Agent'=>'Faraday v1.3.0'
           }).
           to_return(status: 200, body: json_response, headers: {})
-          
+
       click_link 'Login with Google'
       user_count = User.count
       expect(user_count).to eq(1)
 
       expect(current_path).to eq(address_path)
-      expect(page).to have_link 'Logout John Smith'
+
+      expect(page).to have_link 'Logout'
     end
   end
 end

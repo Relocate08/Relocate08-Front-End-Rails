@@ -1,11 +1,37 @@
-<h1>Relocate</h1>
-<h1>Welcome, <%= current_user.name %>!</h1>
-
-<h2>Select an area to search!</h2>
-
-<div class="location-search">
-  <%= form_with  url: '/address', method: :get, local: true do |f| %>
-    <%= f.text_field :location, placeholder: 'Enter Address' %>
-    <%= f.submit 'Search Location' %>
-  <% end %>
+<div class="container">
+  <div class="row justify-content-start">
+    <div class="col-md-7 pad-25-top">
+      <h1 class="align-top">Services Search</h1>
+    </div>
+    <div class="col-md-5 pad-30-top">
+      <div class="location-search float-right">
+        <%= form_with  url: '/address', method: :get, local: true do |f| %>
+          <%= f.text_field :location, placeholder: 'Enter Address' %>
+          <%= f.submit 'Search Location', class: "btn orange" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
+<hr>
+<div class="container">
+  <div class="row justify-content-start">
+    <div class="col-md-8 pad-25-top">
+      <h1 class="align-top">Saved Searches</h1>
+    </div>
+  </div>
+</div>
+<section class="movie-details">
+  <div class="container">
+    <div class="row justify-content-md-right">
+      <div class="col col-md-4">
+        <strong>Business:</strong>
+
+      </div>
+      <div class="col col-md-4">
+        <strong>URL:</strong>
+
+      </div>
+    </div>
+  </div>
+</section>

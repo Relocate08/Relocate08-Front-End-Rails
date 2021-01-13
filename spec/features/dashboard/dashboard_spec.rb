@@ -24,13 +24,9 @@ describe 'As a user' do
       end
 
       expect(current_path).to eq('/address')
+      click_on 'Utilities'
 
-      within '.buttons' do
-        expect(page).to have_button('Utilities')
-        click_on 'Utilities'
-      end
-
-      expect(current_path).to eq('/80211/Utilities')
+      expect(current_path).to eq('/80211/utilities')
       expect(page).to have_content('Utilities')
       expect(page).to have_link('Electricity')
     end
@@ -50,7 +46,7 @@ describe 'As a user' do
       to_return(status: 200, body: json_response, headers: {})
 
        visit '/dashboard'
-       
+
        expect(current_path).to eq("/address")
     end
   end

@@ -2,10 +2,12 @@ require 'rails_helper'
 
 describe 'As a logged in user' do
   describe 'When I click on a company from the service type index page' do
-    it 'I am taken to that companys show page to see their info' do
-      user = create(:user)
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+    before(:each) do
+      @user = create(:user)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+    end
 
+    it 'I am taken to that companys show page to see their info' do
       json_response = File.read('spec/fixtures/utilities/electric_search.json')
       stub_request(:get, "https://relocate-back-end-rails.herokuapp.com/api/v1/yelp/80211/utilities/electricity")
         .to_return(status: 200, body: json_response, headers: {})
@@ -15,7 +17,6 @@ describe 'As a logged in user' do
       click_on 'Electricity'
 
       visit '/80211/utilities/electricity'
-
 
       click_link 'Xcel Energy'
       expect(current_path).to eq('/businesses/9s8dfs7fsdmsdf')

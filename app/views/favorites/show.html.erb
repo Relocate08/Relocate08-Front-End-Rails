@@ -21,7 +21,7 @@
       <%= image_tag "distance" , {size: "50" } %>
         <%= @distance.round(2) %> miles away
     </p>
-    <div class="pad-25-top txt-show">
+    <div class="pad-50-top txt-show">
       <%= link_to image_tag("delete", class: "delete-img-show" ), "/#{current_user.id}/favorites/#{@id}" , method: :delete %>Delete from favorites
     </div>
   </div>

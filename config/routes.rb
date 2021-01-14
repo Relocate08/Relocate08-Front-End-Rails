@@ -21,4 +21,8 @@ Rails.application.routes.draw do
   get '/team', to: 'team#index', as: :team
   get '/privacy', to: 'privacy#index', as: :privacy
   get '/logout', to: 'sessions#destroy'
+
+  post '/location', to: 'location#create'
+  patch '/location', to: 'location#update'
+  delete '/location', to: 'location#destroy'
 end

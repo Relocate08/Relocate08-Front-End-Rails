@@ -32,7 +32,7 @@
             <div class="team-image pad-25-top">
               <div class="card-title name center pad-25-bottom">
                 <div class='business'>
-                  <%= link_to "#{fav.business_name}" , "/#{current_user.id}/favorites/#{fav.yelp_business_id}" %><br>
+                  <%= link_to "#{fav.business_name}" , "/#{current_user.id}/favorites/#{fav.yelp_business_id}", class: "a-primary" %><br>
                   <%= link_to image_tag("delete", class: "delete"), "/#{current_user.id}/favorites/#{fav.yelp_business_id}" , method: :delete %>
                 </div>
               </div>
@@ -42,5 +42,3 @@
       </div>
     </div>
     <% end %>
-
-

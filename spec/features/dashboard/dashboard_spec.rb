@@ -7,6 +7,7 @@ describe 'As a user' do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
       json_response = File.read('spec/fixtures/location_search_null.json')
+      WebMock.allow_net_connect!
       stub_request(:get, "https://relocate-back-end-rails.herokuapp.com/api/v1/location/#{user.id}").
          with(
            headers: {

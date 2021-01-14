@@ -8,6 +8,7 @@ class ServiceTypesController < ApplicationController
   end
 
   def show
+    @id = params[:id]
     @name = params[:name]
     @image = params[:image]
     @url = params[:url]

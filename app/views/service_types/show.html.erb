@@ -8,3 +8,5 @@
     <p class="pad-25-bottom"><%= image_tag "distance", {size: "50" } %> <%= @distance.round(2) %> miles away</p>
   </div>
 </div>
+
+<%= link_to image_tag("heart", class: "like"), "/#{current_user.id}/favorites?yelp_business_id=#{@id}&business_name=#{@name}" , method: :post %>

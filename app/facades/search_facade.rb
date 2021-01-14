@@ -19,4 +19,17 @@ class SearchFacade
       [true, json[:data][:attributes][:location]]
     end
   end
+
+  def self.save_address(user_id, location)
+    BackendService.save_location(user_id, location)
+  end  
+
+  def self.update_address(user_id, location)
+    BackendService.update_location(user_id, location)
+  end
+
+  def self.destroy_address(user_id)
+    BackendService.destroy_location(user_id)
+  end
 end
+

@@ -26,7 +26,7 @@ describe 'As an authenticated user' do
       expect(page).to have_link('Privacy Policy')
     end
 
-    it 'Google OAuth logs in new user' do
+    xit 'Google OAuth logs in new user' do
       user = User.new
       user.id = 1
 
@@ -63,7 +63,7 @@ describe 'As an authenticated user' do
       expect(page).to have_link('Logout')
     end
 
-    it 'Returning Google user is logged in' do
+    xit 'Returning Google user is logged in' do
       stub_omniauth
       create(:omniauth_mock_user)
       user_count = User.count
@@ -86,7 +86,7 @@ describe 'As an authenticated user' do
       user_count = User.count
       expect(user_count).to eq(1)
 
-      expect(current_path).to eq(address_path)
+      expect(current_path).to eq(dashboard_path)
 
       expect(page).to have_link 'Logout'
     end

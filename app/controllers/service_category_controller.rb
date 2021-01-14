@@ -1,7 +1,7 @@
 class ServiceCategoryController < ApplicationController
   def index
     number = params[:location].to_i
-    if number >= 10000 && number.to_s.length <= 5
+    if number >= 10_000 && number.to_s.length <= 5
       @location = number
     else
       flash[:error] = 'Please enter a valid zipcode'

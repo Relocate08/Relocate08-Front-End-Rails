@@ -2,9 +2,9 @@
 <hr>
 <div class="container pad-100-top">
   <div class="biz-info">
-    <%= image_tag("relocate.png") %><%= link_to "See #{@name} on Yelp", @url %>
-    <%= image_tag("relocate.png") %><%= @location %>
-    <%= image_tag("relocate.png") %><%= @phone %>
-    <%= image_tag("relocate.png") %><%= @distance.round(2) %> miles away</p>
+    <p class="pad-25-bottom"><%= link_to "See #{@name} on Yelp", @url %></p>
+    <p class="pad-25-bottom"><%= image_tag "address", {size: "50" } %><%= @location %></p>
+    <p class="pad-25-bottom"><%= image_tag "mobile-phone", {size: "50" } %><%= @phone %></p>
+    <p class="pad-25-bottom"><%= image_tag "distance", {size: "50" } %><%= @distance.round(2) %> miles away</p>
   </div>
 </div>

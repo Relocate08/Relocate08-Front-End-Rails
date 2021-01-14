@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/auth/google_oauth2/callback', to: 'sessions#create'
   get '/dashboard', to: 'dashboard#index', as: :dashboard
 
-  post '/:user_id', to: 'favorites#create', as: :favorite_create
+  post '/:user_id/favorites', to: 'favorites#create', as: :favorite_create
   get '/:user_id/favorites/:business_id', to: 'favorites#show'
   delete '/:user_id/favorites/:business_id', to: 'favorites#destroy'
 

@@ -1,0 +1,36 @@
+{
+  "data": [
+      {  "attributes": {
+          "id": "9s8dfs7fsdmaej",
+          "name": "Chris' Scapers of Land",
+          "image": "https://s3-media1.fl.yelpcdn.com/bphoto/pDZ8YQ098hOq1RzwbFFyWA/o.jpg",
+          "url": "https://www.yelp.com/biz/xcel-energy-denver?adjust_creative=zQj4oUhAlRBYo7eV2LOdZA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=zQj4oUhAlRBYo7eV2LOdZA",
+          "location": "123 19th St, Ste 3000, Denver, CO, 80202",
+          "phone": "(800) 895-8888",
+          "distance":  1.019879293317
+         }
+      },
+      {   "attributes": {
+
+          "id": "pas9w4rg4io",
+          "name": "Chris' Jazzercise",
+          "image": "",
+          "url": "https://www.yelp.com/biz/mountain-parks-electric-granby?adjust_creative=zQj4oUhAlRBYo7eV2LOdZA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=zQj4oUhAlRBYo7eV2LOdZA",
+          "location": "456 W Agate Ave, Granby, CO 80446",
+          "phone": "(970) 887-5555",
+          "distance": 2.85732154944
+        }
+      },
+      {    "attributes": {
+          "id": "sd834twow8r2",
+          "name": "Brett's CrossFit",
+          "image": "",
+          "url": "https://www.yelp.com/biz/irea-sedalia?adjust_creative=zQj4oUhAlRBYo7eV2LOdZA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=zQj4oUhAlRBYo7eV2LOdZA",
+          "location": "777 N Hwy 85, Sedalia, CO 80135",
+          "phone": "(800) 332-3333",
+          "distance": 3.4054643139
+
+        }
+      }
+  ]
+}

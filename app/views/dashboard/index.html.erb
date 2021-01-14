@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row justify-content-start">
-    <div class="col-md-7 pad-25-top">
+    <div class="col-md-7 pad-25-top pad-25-bottom">
       <h1 class="align-top">Services Search</h1>
     </div>
     <div class="col-md-5 pad-30-top">
@@ -16,22 +16,27 @@
 <hr>
 <div class="container">
   <div class="row justify-content-start">
-    <div class="col-md-8 pad-25-top">
-      <h1 class="align-top">Saved Searches</h1>
+    <div class="col-md-12 pad-25-top center">
+      <h1 class="align-top">Favorites</h1>
     </div>
   </div>
 </div>
-<section class="movie-details">
-  <div class="container">
-    <div class="row justify-content-md-right">
-      <div class="col col-md-4">
-        <strong>Business:</strong>
-
-      </div>
-      <div class="col col-md-4">
-        <strong>URL:</strong>
-
-      </div>
+<!% if @favorites.empty? %>
+<h4 class="center pad-100-top">You have no favorites.</h4>
+<% else %>
+  <div class="container pad-100-top">
+    <div class="row">
+      <!% @favorites.each do |favorite| %>
+        <div class="favorites-info card pad-25-top gutter10">
+          <div class="team-image pad-25-top">
+            <div class="card-title name center pad-25-bottom">
+              <div class='business'>
+                <!%= link_to favorite.name, "/businesses/#{favorite.id}", class: "a-primary" %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!% end %>
     </div>
   </div>
-</section>
+<!% end %>

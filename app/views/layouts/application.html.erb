@@ -16,10 +16,12 @@
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
           <ul class="navbar-nav mr-auto center">
             <li class="nav-item active">
-              <a class="nav-link" href="<%= root_path %>">Home</a>
+              <a href="<%= root_path %>" class="padding: 25px 50px 75px">
+                <%= image_tag "relocate_logo_white" , {size: "100" } %>
+              </a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="<%= team_path %>">The Team</a>
+              <a class="nav-link pad-25-top" href="<%= team_path %>">The Team</a>
             </li>
           </ul>
         </div>
@@ -34,7 +36,7 @@
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
               <a href="<%= root_path %>" class="padding: 25px 50px 75px">
-                <%= image_tag "relocate_logo" , {size: "100" } %>
+                <%= image_tag "relocate_logo_white" , {size: "100" } %>
               </a>
             </li>
             <li class="nav-item active">

@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       user.save
     end
     session[:user_id] = user.id
-    flash[:success] = "You are now logged in!"
+    flash[:success] = 'You are now logged in!'
     redirect_to dashboard_path
   end
 

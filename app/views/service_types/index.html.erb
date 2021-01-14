@@ -10,8 +10,8 @@
 					<div class="team-image pad-25-top">
 						<div class="card-title name center pad-25-bottom">
 							<div class='business'>
-								<%= link_to biz.name, "/businesses/#{biz.id}?name=#{biz.name}&image=#{biz.image}&url=#{biz.url}&location=#{biz.location}&phone=#{biz.phone}&distance=#{biz.distance}"%>
-									<p style="font-size:20px"><%= biz.distance.round(2) %> miles away</p>
+								<%= link_to biz.name, "/businesses/#{biz.id}?name=#{biz.name}&image=#{biz.image}&url=#{biz.url}&location=#{biz.location}&phone=#{biz.phone}&distance=#{biz.distance}", class: "a-primary" %>
+								<p class="distance"><%= biz.distance.round(2) %> miles away</p>
 							</div>
 						</div>
 					</div>

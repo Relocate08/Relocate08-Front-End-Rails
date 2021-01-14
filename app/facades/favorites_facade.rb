@@ -13,4 +13,9 @@ class FavoritesFacade
   def self.delete_favorite(user_id, yelp_business_id)
     FavoritesService.delete_favorite(user_id, yelp_business_id)
   end
+
+  def self.show_favorite(business_id)
+    data = FavoritesService.show_favorite(business_id)
+    Business.new(data[:data])
+  end
 end

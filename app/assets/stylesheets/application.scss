@@ -25,6 +25,7 @@ $burgundy:  #661D3D;
 $dark-blue: #125966;
 $gold: #ffc107;
 $bright-blue: #0E9AB3;
+$periwinkle: #7692CC;
 
 .pad-25-top {
   padding-top: 25px;
@@ -257,14 +258,32 @@ hr {
 };
 
 .biz-info {
-  font-size: 30px
+  font-size: 30px;
 };
 
 .distance {
   font-size: 20px;
   padding-top: 50px;
+  color: lightgrey;
 };
 
 .a-primary {
-  color: $burgundy;
+  color: Black;
 }
+
+.favorites-info {
+  width: 300px;
+  background-color: $periwinkle;
+  padding: 10px;
+  border: solid 1px #999;
+  box-shadow:  0 0 10px  rgba(0,12,0,0.6);
+  -moz-box-shadow: 0 0 10px  rgba(0,12,0,0.6);
+  -webkit-box-shadow: 0 0 10px  rgba(0,12,0,0.6);
+  -o-box-shadow: 0 0 10px  rgba(0,12,0,0.6);
+  border-top-left-radius:12px;
+  border-top-right-radius:12px;
+  border-bottom-left-radius:12px;
+  border-bottom-right-radius:12px;
+  color: white;
+  font-size: 30px;
+};

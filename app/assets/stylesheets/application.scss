@@ -63,6 +63,10 @@ $periwinkle: #7692CC;
   padding-left: 25px;
 }
 
+.pad-10-bottom {
+  padding-bottom: 10px;
+}
+
 body {
   // margin: 15px 30px;
   font-family: 'Rubik', sans-serif;
@@ -318,4 +322,8 @@ hr {
 
 .txt-show {
   font-size: 20px;
+};
+
+.zip {
+  color: $burgundy;
 };

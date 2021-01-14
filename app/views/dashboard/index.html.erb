@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row justify-content-start">
-    <div class="col-md-7 pad-25-top">
-      <h1 class="align-top">Services Search</h1><br>
+    <div class="col-md-7 pad-25-top pad-25-bottom">
+      <h1 class="align-top">Services Search</h1>
       <% if @facade %>
         <h3> Current Zipcode: <%= @location %> </h3>
       <% else %>
@@ -37,22 +37,28 @@
 <hr>
 <div class="container">
   <div class="row justify-content-start">
-    <div class="col-md-8 pad-25-top">
-      <h1 class="align-top">Saved Searches</h1>
+    <div class="col-md-12 pad-25-top center">
+      <h1 class="align-top">Favorites</h1>
     </div>
   </div>
 </div>
+
 <section class="movie-details">
   <div class="container">
     <div class="row justify-content-md-right">
       <div class="col col-md-4">
-        <strong>Business:</strong>
+        <strong>Business:</strong><br>
+        
+        <% @favorites.each do |fav| %>
+          <%= link_to "#{fav.business_name}", "/#{current_user.id}/favorites/#{fav.yelp_business_id}"  %><br>
+          <%= link_to "Delete From Favorites", "/#{current_user.id}/favorites/#{fav.yelp_business_id}", method: :delete %><br><br>
+        <% end %>
 
       </div>
       <div class="col col-md-4">
         <strong>URL:</strong>
 
       </div>
+
     </div>
   </div>
-</section>

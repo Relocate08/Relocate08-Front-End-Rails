@@ -33,7 +33,7 @@
               <div class="card-title name center pad-25-bottom">
                 <div class='business'>
                   <%= link_to "#{fav.business_name}" , "/#{current_user.id}/favorites/#{fav.yelp_business_id}" %><br>
-                  <%= link_to "Delete From Favorites" , "/#{current_user.id}/favorites/#{fav.yelp_business_id}" , method: :delete %>
+                  <%= link_to image_tag("delete", class: "delete"), "/#{current_user.id}/favorites/#{fav.yelp_business_id}" , method: :delete %>
                 </div>
               </div>
             </div>

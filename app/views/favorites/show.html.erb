@@ -6,7 +6,6 @@
   <li><%= link_to "See #{@name} on Yelp", @url %></li>
   <li><%= @location %></li>
   <li><%= @phone %></li>
-  <li><%= @distance.round(2) %> miles away</li>
 </ul>
 
-<%= link_to "Favorite this Business", "/#{current_user.id}/favorites?yelp_business_id=#{@id}&business_name=#{@name}", method: :post %>
+<%= link_to "Delete From Favorites", "/#{current_user.id}/favorites/#{@id}", method: :delete %>

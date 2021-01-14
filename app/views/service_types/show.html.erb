@@ -8,3 +8,5 @@
   <li><%= @business.phone %></li>
   <li><%= @business.distance.round(2) %> miles away</li>
 </ul>
+
+<%= link_to "Favorite this Business", "/#{current_user.id}/favorites?yelp_business_id=#{@business.id}&business_name=#{@business.name}", method: :post %>

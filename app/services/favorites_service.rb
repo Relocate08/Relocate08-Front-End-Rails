@@ -5,6 +5,11 @@ class FavoritesService
     end
   end
 
+  def self.show_favorite(business_id)
+    response = conn.get("/api/v1/yelp/businesses/#{business_id}")
+    JSON.parse(response.body, symbolize_names: true)
+  end
+
   def self.all_favorites(user_id)
     response = conn.get("/api/v1/favorites/#{user_id}")
     JSON.parse(response.body, symbolize_names: true)

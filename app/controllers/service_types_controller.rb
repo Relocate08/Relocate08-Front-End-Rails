@@ -1,6 +1,8 @@
 class ServiceTypesController < ApplicationController
   def index
-    @businesses = SearchFacade.all_businesses(params[:location], params[:services], params[:type])
+    @businesses = Rails.cache.fetch("#{params[:location] + params[:services] + params[:type]}/search_facade/all_businesses", expires_in: 12.hours) do
+      SearchFacade.all_businesses(params[:location], params[:services], params[:type])
+    end
   end
 
   def show

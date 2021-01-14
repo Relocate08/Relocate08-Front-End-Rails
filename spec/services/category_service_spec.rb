@@ -4,7 +4,7 @@ describe CategoryService do
   describe 'class methods' do
     describe 'all businesses' do
       it 'returns all the businesses' do
-        json_response = File.read('spec/fixtures/electric_search.json')
+        json_response = File.read('spec/fixtures/utilities/electric_search.json')
         stub_request(:get, "https://relocate-back-end-rails.herokuapp.com/api/v1/yelp/82011/utilities/electricity").
          with(
            headers: {

@@ -56,6 +56,9 @@
     <% end %>
 
     <section class="pad-25-bottom" id="main">
+      <% flash.each do |type, message| %>
+        <p><%= message %></p>
+      <% end %>
       <%= yield %>
     </section>
 

@@ -49,5 +49,38 @@ describe 'As a user' do
 
        expect(current_path).to eq("/address")
     end
+
+    it 'not search with an invalid zipcode' do
+      user = create(:user)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+      json_response = File.read('spec/fixtures/location_search_null.json')
+      stub_request(:get, "https://relocate-back-end-rails.herokuapp.com/api/v1/location/#{user.id}").
+         with(
+           headers: {
+       	  'Accept'=>'*/*',
+       	  'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+       	  'User-Agent'=>'Faraday v1.3.0'
+           }).
+         to_return(status: 200, body: json_response, headers: {})
+
+      visit '/dashboard'
+
+      within '.location-search' do
+        fill_in :location, with: '3012q'
+        click_on 'Search Location'
+      end
+
+      expect(current_path).to eq(dashboard_path)
+      expect(page).to have_content('Please enter a valid zipcode')
+
+      within '.location-search' do
+        fill_in :location, with: '****'
+        click_on 'Search Location'
+      end
+
+      expect(current_path).to eq(dashboard_path)
+      expect(page).to have_content('Please enter a valid zipcode')
+    end
   end
 end

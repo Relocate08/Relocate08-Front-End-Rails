@@ -4,7 +4,7 @@
 
 This repo represents the front-end portion of a three-part project as part of Turing School of Software and Design's Back-End Engineering program, Module 3.  
 
-Titled Relocate, this application aims to ease the chaos of moving, providing a resource for users to discover services in their new hometown.
+Titled Relocate, this application aims to ease the chaos of moving, providing a resource for users to discover services in their new hometown.  Upon creating an account, users can search a new hometown by zip code and browse categories of businesses they need such as different utility companies, gyms, parks, and plumbing.  Users can also save favorites to their account to revisit businesses of their choice.  Each business show page displays its phone number, address, and name as well as a link to that business' Yelp page for further information.
 
 All three repositories that make up this project can be found [here](https://github.com/Relocate08).
 

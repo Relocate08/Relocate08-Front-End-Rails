@@ -28,8 +28,6 @@ describe 'As a logged in user' do
         expect(page).to have_content('(800) 895-4999')
         expect(page).to have_content(1.02)
       end
-
-      expect(page).to have_content('Favorite this Business')
     end
 
     it 'I can favorite a business' do

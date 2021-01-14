@@ -1,0 +1,13 @@
+{
+  "data": [
+      {
+          "id": "1",
+          "type": "favorites",
+          "attributes": {
+              "user_id": 1,
+              "yelp_business_id": "9s8dfs7fsdmsdf",
+              "business_name": "The Business"
+          }
+      }
+  ]
+}

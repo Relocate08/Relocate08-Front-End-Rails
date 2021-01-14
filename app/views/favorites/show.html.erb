@@ -1,0 +1,11 @@
+<h1><%= @name %></h1>
+
+<ul class="biz-info">
+  <p class="image"><%= image_tag(@image) %><br></p>
+  <li><%= @name %></li>
+  <li><%= link_to "See #{@name} on Yelp", @url %></li>
+  <li><%= @location %></li>
+  <li><%= @phone %></li>
+</ul>
+
+<%= link_to "Delete From Favorites", "/#{current_user.id}/favorites/#{@id}", method: :delete %>

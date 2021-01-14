@@ -1,12 +1,12 @@
-<h1><%= @name %></h1>
-
-<ul class="biz-info">
-  <p class="image"><%= image_tag(@image) %><br></p>
-  <li><%= @name %></li>
-  <li><%= link_to "See #{@name} on Yelp", @url %></li>
-  <li><%= @location %></li>
-  <li><%= @phone %></li>
-  <li><%= @distance.round(2) %> miles away</li>
-</ul>
+<h1 class="center pad-25-top pad-25-bottom"><%= @name %></h1>
+<hr>
+<div class="container pad-100-top">
+  <div class="biz-info">
+    <p class="pad-25-bottom"><%= link_to "See #{@name} on Yelp", @url %></p>
+    <p class="pad-25-bottom"><%= image_tag "address", {size: "50" } %> <%= @location %></p>
+    <p class="pad-25-bottom"><%= image_tag "mobile-phone", {size: "50" } %> <%= @phone %></p>
+    <p class="pad-25-bottom"><%= image_tag "distance", {size: "50" } %> <%= @distance.round(2) %> miles away</p>
+  </div>
+</div>
 
 <%= link_to "Favorite this Business", "/#{current_user.id}/favorites?yelp_business_id=#{@id}&business_name=#{@name}", method: :post %>

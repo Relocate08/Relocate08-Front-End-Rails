@@ -1,6 +1,6 @@
 class ServiceCategoryController < ApplicationController
   def index
-    number = params[:location].to_i
+    number = params[:format].to_i
     if number >= 10000 && number.to_s.length <= 5
       @location = number
     else

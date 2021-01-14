@@ -1,0 +1,10 @@
+{
+  "data": {
+    "id": "2",
+    "type": "location",
+    "attributes": {
+      "user_id": 1,
+      "location": "33179"
+    }
+  }
+}

@@ -86,7 +86,7 @@ describe 'As an authenticated user' do
       user_count = User.count
       expect(user_count).to eq(1)
 
-      expect(current_path).to eq(address_path)
+      expect(current_path).to eq(dashboard_path)
 
       expect(page).to have_link 'Logout'
     end

@@ -30,7 +30,7 @@
 <% if @favorites.empty? %>
   <h4 class="center pad-100-top">You have no favorites.</h4>
   <% else %>
-    <div class="container pad-100-top">
+    <div class="container pad-50-top">
       <div class="row">
         <% @favorites.each do |fav| %>
           <div class="favorites-info card pad-25-top gutter10">
@@ -38,12 +38,14 @@
               <div class="card-title name center pad-25-bottom">
                 <div class='business'>
                   <%= link_to "#{fav.business_name}" , "/#{current_user.id}/favorites/#{fav.yelp_business_id}", class: "a-primary" %><br>
-                  <%= link_to image_tag("delete", class: "delete"), "/#{current_user.id}/favorites/#{fav.yelp_business_id}" , method: :delete %>
                 </div>
+              </div>
+              <div class="pad-25-left">
+                <%= link_to image_tag("delete", class: "delete-img"), "/#{current_user.id}/favorites/#{fav.yelp_business_id}" , method: :delete %>
               </div>
             </div>
           </div>
-          <% end %>
+        <% end %>
       </div>
     </div>
   <% end %>

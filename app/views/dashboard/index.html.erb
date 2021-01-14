@@ -25,7 +25,12 @@
   <div class="container">
     <div class="row justify-content-md-right">
       <div class="col col-md-4">
-        <strong>Business:</strong>
+        <strong>Business:</strong><br>
+        
+        <% @favorites.each do |fav| %>
+          <%= link_to "#{fav.business_name}", "/#{current_user.id}/favorites/#{fav.yelp_business_id}"  %><br>
+          <%= link_to "Delete From Favorites", "/#{current_user.id}/favorites/#{fav.yelp_business_id}", method: :delete %><br><br>
+        <% end %>
 
       </div>
       <div class="col col-md-4">

@@ -22,7 +22,7 @@ describe 'As a user' do
       stub_request(:post, "https://relocate-back-end-rails.herokuapp.com/api/v1/80211/#{@user.id}")
         .to_return(status: 200, body: json_response, headers: {})
 
-      within '.location-search' do
+      within '#save-location' do
         fill_in :location, with: '80211'
         click_on 'Save Location'
       end
@@ -49,7 +49,7 @@ describe 'As a user' do
 
       visit '/dashboard'
 
-      within '.location-search' do
+      within '#current-location' do
         click_button 'Search With Saved Zipcode'
       end
 
@@ -75,7 +75,7 @@ describe 'As a user' do
 
       click_link 'Login with Google'
 
-      within '.location-search' do
+      within '#save-location' do
         fill_in :location, with: '3012q'
         click_on 'Save Location'
       end
@@ -83,13 +83,49 @@ describe 'As a user' do
       expect(current_path).to eq(dashboard_path)
       expect(page).to have_content('Please enter a valid zipcode')
 
-      within '.location-search' do
+      within '#save-location' do
         fill_in :location, with: '****'
         click_on 'Save Location'
       end
 
       expect(current_path).to eq(dashboard_path)
       expect(page).to have_content('Please enter a valid zipcode')
+    end
+
+    it 'If I have favorites saved, I see them' do
+      stub_omniauth
+      @user = create(:omniauth_mock_user, id: 1)
+
+      first_login = File.read('spec/fixtures/location_search_null.json')
+      stub_request(:get, 'https://relocate-back-end-rails.herokuapp.com/api/v1/location/1')
+        .to_return(status: 200, body: first_login, headers: {})
+
+      have_favs = File.read('spec/fixtures/get_favorite.json')
+      stub_request(:get, 'https://relocate-back-end-rails.herokuapp.com/api/v1/favorites/1')
+        .to_return(status: 200, body: have_favs, headers: {})
+
+      visit root_path
+      click_link 'Login with Google'
+
+      expect(page).to have_link('Xcel Energy')
+    end
+
+    it 'If I do not have favorites saved, I do not see any' do
+      stub_omniauth
+      @user = create(:omniauth_mock_user, id: 1)
+
+      first_login = File.read('spec/fixtures/location_search_null.json')
+      stub_request(:get, 'https://relocate-back-end-rails.herokuapp.com/api/v1/location/1')
+        .to_return(status: 200, body: first_login, headers: {})
+
+      no_favs = File.read('spec/fixtures/empty_favs.json')
+      stub_request(:get, 'https://relocate-back-end-rails.herokuapp.com/api/v1/favorites/1')
+        .to_return(status: 200, body: no_favs, headers: {})
+
+      visit root_path
+      click_link 'Login with Google'
+
+      expect(page).to have_content('You have no favorites.')
     end
 
     it 'should see button appear if location exists' do
@@ -109,6 +145,16 @@ describe 'As a user' do
       click_link 'Login with Google'
 
       expect(page).to have_button('Search With Saved Zipcode')
+    end
+
+    it "can not be accessed if not logged in" do
+
+      visit '/dashboard'
+      expect(current_path).to eq("/")
+
+      within(".custom-alert") do
+        expect(page).to have_content("You must be logged in")
+      end
     end
   end
 end

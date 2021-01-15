@@ -1,0 +1,91 @@
+{
+	"data": [
+		{
+			"id": "denver-upon-closer-reflection-opening-reception-and-exhibition",
+			"type": "events",
+			"attributes": {
+				"id": "denver-upon-closer-reflection-opening-reception-and-exhibition",
+				"name": "UPON CLOSER REFLECTION Opening Reception and Exhibition",
+				"is_free": true,
+				"is_canceled": false,
+				"url": "https://www.yelp.com/events/denver-upon-closer-reflection-opening-reception-and-exhibition?adjust_creative=hLVXR0MIhyJhliv5ar9z7g&utm_campaign=yelp_api_v3&utm_medium=api_v3_event_search&utm_source=hLVXR0MIhyJhliv5ar9z7g",
+				"attending_count": 1,
+				"interested_count": 0,
+				"location": [
+					"300 W 11th Ave",
+					"Ste A",
+					"Denver, CO 80204"
+				],
+				"time_start": "2021-01-15T17:00:00.000-07:00"
+			}
+		},
+		{
+			"id": "denver-virtual-yelp-event-yappy-hour-w-canine-companions-for-independence",
+			"type": "events",
+			"attributes": {
+				"id": "denver-virtual-yelp-event-yappy-hour-w-canine-companions-for-independence",
+				"name": "Virtual Yelp Event: Yappy Hour w/ Canine Companions For Independence",
+				"is_free": true,
+				"is_canceled": false,
+				"url": "https://www.yelp.com/events/denver-virtual-yelp-event-yappy-hour-w-canine-companions-for-independence?adjust_creative=hLVXR0MIhyJhliv5ar9z7g&utm_campaign=yelp_api_v3&utm_medium=api_v3_event_search&utm_source=hLVXR0MIhyJhliv5ar9z7g",
+				"attending_count": 1,
+				"interested_count": 35,
+				"location": [
+					"Denver, CO 80202"
+				],
+				"time_start": "2021-01-19T18:00:00.000-07:00"
+			}
+		},
+		{
+			"id": "denver-stories-on-stage-presents-american-drag",
+			"type": "events",
+			"attributes": {
+				"id": "denver-stories-on-stage-presents-american-drag",
+				"name": "Stories on Stage presents \"American Drag\"",
+				"is_free": false,
+				"is_canceled": false,
+				"url": "https://www.yelp.com/events/denver-stories-on-stage-presents-american-drag?adjust_creative=hLVXR0MIhyJhliv5ar9z7g&utm_campaign=yelp_api_v3&utm_medium=api_v3_event_search&utm_source=hLVXR0MIhyJhliv5ar9z7g",
+				"attending_count": 1,
+				"interested_count": 0,
+				"location": [
+					"3080 Larimer St, Denver, CO 80205"
+				],
+				"time_start": "2021-01-15T19:00:00.000-07:00"
+			}
+		},
+		{
+			"id": "denver-aarp-colorado-downtown-denver-tour-44",
+			"type": "events",
+			"attributes": {
+				"id": "denver-aarp-colorado-downtown-denver-tour-44",
+				"name": "AARP Colorado Downtown Denver Tour",
+				"is_free": true,
+				"is_canceled": false,
+				"url": "https://www.yelp.com/events/denver-aarp-colorado-downtown-denver-tour-44?adjust_creative=hLVXR0MIhyJhliv5ar9z7g&utm_campaign=yelp_api_v3&utm_medium=api_v3_event_search&utm_source=hLVXR0MIhyJhliv5ar9z7g",
+				"attending_count": 1,
+				"interested_count": 0,
+				"location": [
+					"Franklin St & E 8th Ave, Denver, CO 80218"
+				],
+				"time_start": "2021-01-01T09:00:00.000-07:00"
+			}
+		},
+		{
+			"id": "denver-aarp-colorado-denver-lgbt-history-tour-47",
+			"type": "events",
+			"attributes": {
+				"id": "denver-aarp-colorado-denver-lgbt-history-tour-47",
+				"name": "AARP Colorado Denver LGBT History Tour",
+				"is_free": true,
+				"is_canceled": false,
+				"url": "https://www.yelp.com/events/denver-aarp-colorado-denver-lgbt-history-tour-47?adjust_creative=hLVXR0MIhyJhliv5ar9z7g&utm_campaign=yelp_api_v3&utm_medium=api_v3_event_search&utm_source=hLVXR0MIhyJhliv5ar9z7g",
+				"attending_count": 1,
+				"interested_count": 0,
+				"location": [
+					"1301 E Colfax Ave, Denver, CO 80218"
+				],
+				"time_start": "2021-01-01T09:00:00.000-07:00"
+			}
+		}
+	]
+}

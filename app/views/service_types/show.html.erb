@@ -6,7 +6,9 @@
     <p class="pad-25-bottom"><%= image_tag "address", {size: "50" } %> <%= @location %></p>
     <p class="pad-25-bottom"><%= image_tag "mobile-phone", {size: "50" } %> <%= @phone %></p>
     <p class="pad-25-bottom"><%= image_tag "distance", {size: "50" } %> <%= @distance.round(2) %> miles away</p>
+    <div class="pad-50-top txt-show">
+      <%= link_to image_tag("heart", class: "like-img-show", alt: 'favorite'), "/#{current_user.id}/favorites?yelp_business_id=#{@id}&business_name=#{@name}", method: :post %> Favorite this business
+    </div>
   </div>
 </div>
 
-<%= link_to image_tag("heart", class: "like"), "/#{current_user.id}/favorites?yelp_business_id=#{@id}&business_name=#{@name}" , method: :post %>

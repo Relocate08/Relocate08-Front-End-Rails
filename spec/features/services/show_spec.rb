@@ -95,7 +95,7 @@ describe 'As a logged in user' do
       click_link 'Login with Google'
 
       expect(page).to have_link('Xcel Energy')
-      find('.delete').click
+      find('.delete-img').click
       expect(current_path).to eq(dashboard_path)
     end
   end

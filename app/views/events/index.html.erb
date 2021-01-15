@@ -1,13 +1,29 @@
-<h1>Events</h1>
-
-<% @events.each do |event| %>
-	<h4><%= event.name %></h4>
-	<p><%= link_to "Event Website", event.url %></p>
-	<p>Location: <%= event.location %></p>
-	<p>Date: <%= event.readable_date %></p>
-	<p>Time: <%= event.readable_time %></p>
-	<p><%= "FREE EVENT" if event.is_free == true %></p>
-	<p><%= "See website for ticket prices" if event.is_free == false %></p>
-	<p>Attending: <%= event.attending_count %></p>
-	<p>Interested: <%= event.interested_count %></p>
+<h1 class="center pad-25-top pad-25-bottom">Events</h1>
+<hr>
+<% if @events.empty? %>
+	<h3 class="center pad-100-top">Sorry, we didn't find anything.</h3>
+<% else %>
+<div class="container pad-100-top">
+	<div class="row">
+	<% @events.each do |event| %>
+		<div class="events-info card pad-25-top gutter10">
+			<div class="team-image pad-25-top">
+				<div class="card-title name center pad-25-bottom">
+					<div class='events'>
+						<h4> <%= event.name %></h4>
+						<p><%= link_to "Event Website", event.url, class: "a-primary" %></p>
+						<p>Location: <%= event.location %></p>
+						<p>Date: <%= event.readable_date %></p>
+						<p>Time: <%= event.readable_time %></p>
+						<p><%= "FREE EVENT" if event.is_free == true %></p>
+						<p><%= "See website for ticket prices" if event.is_free == false %></p>
+						<p>Attending: <%= event.attending_count %></p>
+						<p>Interested: <%= event.interested_count %></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	<% end %>
+	</div>
+</div>
 <% end %>

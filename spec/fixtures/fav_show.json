@@ -1,0 +1,15 @@
+{
+  "data": {
+      "id": "X8TwUk9xb0kVp50N9QExGw",
+      "type": "businesses",
+      "attributes": {
+          "name": "IREA",
+          "image": "",
+          "url": "https://www.yelp.com/biz/irea-sedalia?adjust_creative=hLVXR0MIhyJhliv5ar9z7g&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=hLVXR0MIhyJhliv5ar9z7g",
+          "phone": "(800) 332-9540",
+          "distance": null,
+          "location": "5496 N Hwy 85  Sedalia CO, 80135",
+          "id": "X8TwUk9xb0kVp50N9QExGw"
+      }
+  }
+}

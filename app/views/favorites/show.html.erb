@@ -1,28 +1,22 @@
-
-
 <h1 class="center pad-25-top pad-25-bottom">
-  <%= @name %>
+  <%= @business.name %>
 </h1>
 <hr>
 <div class="container pad-100-top">
   <div class="biz-info">
     <p class="pad-25-bottom">
-      <%= link_to "See #{@name} on Yelp" , @url %>
+      <%= link_to "See #{@business.name} on Yelp" , @business.url %>
     </p>
     <p class="pad-25-bottom">
       <%= image_tag "address" , {size: "50" } %>
-        <%= @location %>
+        <%= @business.location %>
     </p>
     <p class="pad-25-bottom">
       <%= image_tag "mobile-phone" , {size: "50" } %>
-        <%= @phone %>
-    </p>
-    <p class="pad-25-bottom">
-      <%= image_tag "distance" , {size: "50" } %>
-        <%= @distance.round(2) %> miles away
+        <%= @business.phone %>
     </p>
     <div class="pad-50-top txt-show">
-      <%= link_to image_tag("delete", class: "delete-img-show" ), "/#{current_user.id}/favorites/#{@id}" , method: :delete %>Delete from favorites
+      <%= link_to image_tag("delete", class: "delete-img-show" ), "/#{current_user.id}/favorites/#{@business.id}" , method: :delete %>Delete from favorites
     </div>
   </div>
 </div>

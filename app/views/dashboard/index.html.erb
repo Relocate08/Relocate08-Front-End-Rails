@@ -40,7 +40,7 @@
           <h3 class="float-right"> Current Zipcode: None Saved </h3>
           <div class="pad-25-bottom float-right">
             <%= form_with url: '/location' , method: :post, local: true do |f| %>
-              <%= f.text_field :location, placeholder: 'zipcode', min: 10000, max: 99950 %>
+              <%= f.text_field :location, placeholder: 'Zipcode', min: 10000, max: 99950 %>
               <%= f.submit 'Save Location' , class: "btn btn-warning" %>
             <% end %>
           </div>
@@ -58,7 +58,7 @@
     <div class="col-md-5 pad-25-top center">
       <div class="location-search float-right">
       <%= form_with  url: '/events', method: :get, local: true do |f| %>
-        <%= f.text_field :location, placeholder: 'Search Any Zipcode' %>
+        <%= f.text_field :location, placeholder: 'Zipcode' %>
         <%= f.submit 'Find Events', class: "btn btn-warning" %>
       <% end %>
       </div>

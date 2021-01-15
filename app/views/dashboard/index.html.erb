@@ -5,10 +5,10 @@
       <% if @facade %>
         <div class="pad-50-top">
           <%= form_with url: '/address' , method: :get, local: true do |f| %>
-            <%= f.text_field :location, placeholder: 'Search Any Zipcode' , min: 10000, max: 99950 %>
-              <%= f.submit 'Search Location' , class: "btn btn-warning" %>
-            <% end %>
+            <%= f.text_field :format, placeholder: 'Search Any Zipcode' , min: 10000, max: 99950 %>
+            <%= f.submit 'Search Location' , class: "btn btn-warning" %>
           <% end %>
+        <% end %>
         </div>
     </div>
     <div class="col-md-5 pad-30-top">
@@ -48,7 +48,6 @@
     </div>
   </div>
 </div>
-
 <% if @favorites.empty? %>
   <h4 class="center pad-100-top">You have no favorites.</h4>
   <% else %>

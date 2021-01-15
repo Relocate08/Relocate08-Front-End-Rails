@@ -5,7 +5,7 @@
         <h1>Services Search</h1>
         <div class="pad-50-top">
           <%= form_with url: '/address' , method: :get, local: true do |f| %>
-            <%= f.text_field :format, placeholder: 'Search Any Zipcode' , min: 10000, max: 99950 %>
+            <%= f.text_field :format, placeholder: 'Search Any Zipcode', min: 10000, max: 99950 %>
             <%= f.submit 'Search Location' , class: "btn btn-warning" %>
           <% end %>
         </div>
@@ -13,8 +13,8 @@
       <div class="col-md-5 pad-30-top">
         <div class="location-search float-right">
           <h2 class="float-right zip"> Current Zipcode: <%= @location %></h2>
-          <div class="pad-10-bottom float-right">
-            <%= button_to 'Search With Saved Zipcode', address_path(@location), method: :get, class: "btn btn-warning" %>
+          <div class="current-location pad-10-bottom float-right">
+              <%= button_to 'Search With Saved Zipcode', address_path(@location), method: :get, class: "btn btn-warning" %>
           </div>
           <div class="pad-10-bottom float-right">
             <%= form_with  url: '/location', method: :patch, local: true do |f| %>
@@ -38,7 +38,7 @@
       <div class="col-md-5 pad-30-top">
         <div class="location-search float-right">
           <h3 class="float-right"> Current Zipcode: None Saved </h3>
-          <div class="pad-25-bottom float-right">
+          <div class="save-location pad-25-bottom float-right">
             <%= form_with url: '/location' , method: :post, local: true do |f| %>
               <%= f.text_field :location, placeholder: 'Zipcode', min: 10000, max: 99950 %>
               <%= f.submit 'Save Location' , class: "btn btn-warning" %>
@@ -56,7 +56,7 @@
       <h1 class="align-top">Events Search</h1>
     </div>
     <div class="col-md-5 pad-25-top center">
-      <div class="location-search float-right">
+      <div class="event-search float-right">
       <%= form_with  url: '/events', method: :get, local: true do |f| %>
         <%= f.text_field :location, placeholder: 'Zipcode' %>
         <%= f.submit 'Find Events', class: "btn btn-warning" %>

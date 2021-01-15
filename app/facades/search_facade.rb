@@ -13,16 +13,16 @@ class SearchFacade
 
   def self.location_exists(id)
     json = BackendService.location_exists(id)
-      if json[:data] == nil
-        return false, nil
-      else
-        return true, json[:data][:attributes][:location]
-      end
+    if json[:data].nil?
+      [false, nil]
+    else
+      [true, json[:data][:attributes][:location]]
+    end
   end
 
   def self.save_address(user_id, location)
     BackendService.save_location(user_id, location)
-  end  
+  end
 
   def self.update_address(user_id, location)
     BackendService.update_location(user_id, location)

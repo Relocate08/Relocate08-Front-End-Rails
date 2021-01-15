@@ -141,7 +141,8 @@ describe 'As a user' do
       click_link 'Login with Google'
 
       expect(page).to have_content('You have no favorites.')
-
+    end
+    
     xit 'should see button appear if location exists' do
       user = create(:user)
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)

@@ -19,7 +19,7 @@ describe 'As a user' do
 
       visit '/dashboard'
 
-      
+
       json_response = File.read('spec/fixtures/location_search.json')
       stub_request(:post, "https://relocate-back-end-rails.herokuapp.com/api/v1/80211/#{user.id}").
          with(
@@ -30,7 +30,7 @@ describe 'As a user' do
        	  'User-Agent'=>'Faraday v1.3.0'
            }).
          to_return(status: 200, body: json_response, headers: {})
-         
+
       within '.location-search' do
         fill_in :location, with: '80211'
         click_on 'Save Location'
@@ -103,7 +103,7 @@ describe 'As a user' do
       expect(page).to have_content('Please enter a valid zipcode')
     end
 
-    xit 'should see button appear if location exists' do 
+    xit 'should see button appear if location exists' do
       user = create(:user)
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
@@ -120,6 +120,16 @@ describe 'As a user' do
       visit '/dashboard'
 
       expect(page).to have_button('Search With Saved Zipcode')
+    end
+
+    it "can not be accessed if not logged in" do
+
+      visit '/dashboard'
+      expect(current_path).to eq("/")
+
+      within(".custom-alert") do
+        expect(page).to have_content("You must be logged in")
+      end
     end
   end
 end

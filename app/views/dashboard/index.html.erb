@@ -1,40 +1,65 @@
-<div class="container">
-  <div class="row justify-content-start">
-    <div class="col-md-7 pad-25-top pad-25-bottom">
-      <h1>Services Search</h1>
-      <% if @facade %>
+<% if @facade %>
+  <div class="container">
+    <div class="row justify-content-start">
+      <div class="col-md-7 pad-25-top pad-25-bottom">
+        <h1>Services Search</h1>
         <div class="pad-50-top">
           <%= form_with url: '/address' , method: :get, local: true do |f| %>
             <%= f.text_field :format, placeholder: 'Search Any Zipcode' , min: 10000, max: 99950 %>
             <%= f.submit 'Search Location' , class: "btn btn-warning" %>
           <% end %>
-        <% end %>
         </div>
+      </div>
+      <div class="col-md-5 pad-30-top">
+        <div class="location-search float-right">
+          <h2 class="float-right zip"> Current Zipcode: <%= @location %></h2>
+          <div class="pad-10-bottom float-right">
+            <%= button_to 'Search With Saved Zipcode', address_path(@location), method: :get, class: "btn btn-warning" %>
+          </div>
+          <div class="pad-10-bottom float-right">
+            <%= form_with  url: '/location', method: :patch, local: true do |f| %>
+              <%= f.text_field :location, placeholder: 'Update Your Zipcode', min: 10000, max: 99950  %>
+              <%= f.submit 'Update Zipcode', class: "btn btn-warning" %>
+            <% end %>
+          </div>
+          <div class="float-right pad-25-bottom">
+            <%= button_to 'Delete Saved Zipcode', '/location', method: :delete, class: "btn btn-warning" %> 
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col-md-5 pad-30-top">
+  </div>
+<% else %>
+  <div class="container">
+    <div class="row justify-content-start">
+      <div class="col-md-7 pad-25-top pad-25-bottom">
+        <h1>Services Search</h1>
+      </div>
+      <div class="col-md-5 pad-30-top">
+        <div class="location-search float-right">
+          <h3 class="float-right"> Current Zipcode: None Saved </h3>
+          <div class="pad-25-bottom float-right">
+            <%= form_with url: '/location' , method: :post, local: true do |f| %>
+              <%= f.text_field :location, placeholder: 'zipcode', min: 10000, max: 99950 %>
+              <%= f.submit 'Save Location' , class: "btn btn-warning" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+<hr>
+<div class="container">
+  <div class="row justify-content-start">
+    <div class="col-md-7 pad-25-top">
+      <h1 class="align-top">Events Search</h1>
+    </div>
+    <div class="col-md-5 pad-25-top center">
       <div class="location-search float-right">
-        <% if !@facade %>
-        <h3 class="pad-50-top float-right"> Current Zipcode: None Saved </h3>
-        <div class="pad-25-bottom float-right">
-          <%= form_with  url: '/location', method: :post, local: true do |f| %>
-            <%= f.text_field :location, placeholder: 'Save Your New Zipcode', min: 10000, max: 99950  %>
-            <%= f.submit 'Save Location', class: "btn btn-warning" %>
-          <% end %>
-        </div>
-        <% else %>
-        <h2 class="float-right zip"> Current Zipcode: <%= @location %></h2>
-        <div class="pad-10-bottom float-right">
-          <%= button_to 'Search With Saved Zipcode', address_path(@location), method: :get, class: "btn btn-warning" %>
-        </div>
-        <div class="pad-10-bottom float-right">
-           <%= form_with  url: '/location', method: :patch, local: true do |f| %>
-            <%= f.text_field :location, placeholder: 'Update Your Zipcode', min: 10000, max: 99950  %>
-            <%= f.submit 'Update Zipcode', class: "btn btn-warning" %>
-          <% end %>
-        </div>
-        <div class="float-right pad-25-bottom">
-           <%= button_to 'Delete Saved Zipcode', '/location', method: :delete, class: "btn btn-warning" %> 
-        </div>
+        <%= form_with url: '/:location/events' , method: :get, local: true do |f| %>
+          <%= f.text_field :location, placeholder: 'zipcode' , min: 10000, max: 99950 %>
+          <%= f.submit 'Find Events' , class: "btn btn-warning" %>
         <% end %>
       </div>
     </div>
@@ -49,24 +74,20 @@
   </div>
 </div>
 <% if @favorites.empty? %>
-  <h4 class="center pad-100-top">You have no favorites.</h4>
-  <% else %>
-    <div class="container pad-50-top">
-      <div class="row">
-        <% @favorites.each do |fav| %>
-          <div class="favorites-info card pad-25-top gutter10">
-            <div class="team-image pad-25-top">
-              <div class="card-title name center pad-25-bottom">
-                <div class='business'>
-                  <%= link_to "#{fav.business_name}" , "/#{current_user.id}/favorites/#{fav.yelp_business_id}", class: "a-primary" %><br>
-                </div>
-              </div>
-              <div class="pad-25-left align-bottom">
-                <%= link_to image_tag("delete", class: "delete-img"), "/#{current_user.id}/favorites/#{fav.yelp_business_id}" , method: :delete %>
-              </div>
-            </div>
-          </div>
-        <% end %>
+<h4 class="center pad-100-top">You have no favorites.</h4>
+<% else %>
+<div class="container">
+  <% @favorites.each do |fav| %>
+  <div class="card-deck mb-3 text-center">
+    <div class="favorites-info card mb-4 box-shadow favorite-size">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal"><%= link_to "#{fav.business_name}" , "/#{current_user.id}/favorites/#{fav.yelp_business_id}" , class: "a-primary" %><br></h4>
+      </div>
+      <div class="card-body d-flex flex-column float-right">
+        <%= link_to image_tag("delete", class: "delete-img" ), "/#{current_user.id}/favorites/#{fav.yelp_business_id}" , method: :delete %>
       </div>
     </div>
+  </div>
   <% end %>
+</div>
+<% end %>

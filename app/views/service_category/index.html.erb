@@ -9,14 +9,14 @@
   </div>
 
   <div class="btn-group pad-25-right pad-25-bottom">
-    <a href="<%= "/#{params[:location]}/recreation" %>" class="btn button-service">
+    <a href="<%= "/#{@location}/recreation" %>" class="btn button-service">
       <%= image_tag "recreation" , {size: "110" } %>
         <h2>Recreation</h2>
     </a>
   </div>
 
   <div class="btn-group pad-25-bottom">
-    <a href="<%= "/#{params[:location]}/homeservices" %>" class="btn button-service">
+    <a href="<%= "/#{@location}/homeservices" %>" class="btn button-service">
       <%= image_tag "house" , {size: "110" } %>
         <h2>Home Services</h2>
     </a>

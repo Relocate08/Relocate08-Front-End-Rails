@@ -39,7 +39,7 @@
       <h1 class="align-top">Events Search</h1>
     </div>
     <div class="col-md-5 pad-25-top center">
-      <div class="location-search float-right">
+      <div class="location-search float-right" id='events'>
       <%= form_with  url: '/events', method: :get, local: true do |f| %>
         <%= f.text_field :location, placeholder: 'Search Any Zipcode' %>
         <%= f.submit 'Find Events', class: "btn btn-warning" %>

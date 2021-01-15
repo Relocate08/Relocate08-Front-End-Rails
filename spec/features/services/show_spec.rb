@@ -2,12 +2,22 @@ require 'rails_helper'
 
 describe 'As a logged in user' do
   describe 'When I click on a company from the service type index page' do
-    before(:each) do
-      @user = create(:user, id: 1)
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
-    end
-
     it 'I am taken to that companys show page to see their info' do
+      stub_omniauth
+      @user = create(:omniauth_mock_user, id: 1)
+  
+      first_login = File.read('spec/fixtures/location_search_null.json')
+      stub_request(:get, 'https://relocate-back-end-rails.herokuapp.com/api/v1/location/1')
+        .to_return(status: 200, body: first_login, headers: {})
+  
+      no_favs = File.read('spec/fixtures/empty_favs.json')
+      stub_request(:get, 'https://relocate-back-end-rails.herokuapp.com/api/v1/favorites/1')
+        .to_return(status: 200, body: no_favs, headers: {})
+  
+      visit root_path
+      click_link 'Login with Google'
+
+
       json_response = File.read('spec/fixtures/utilities/electric_search.json')
       stub_request(:get, "https://relocate-back-end-rails.herokuapp.com/api/v1/yelp/80211/utilities/electricity")
         .to_return(status: 200, body: json_response, headers: {})
@@ -31,6 +41,21 @@ describe 'As a logged in user' do
     end
 
     it 'I can favorite a business' do
+      stub_omniauth
+      @user = create(:omniauth_mock_user, id: 1)
+  
+      first_login = File.read('spec/fixtures/location_search_null.json')
+      stub_request(:get, 'https://relocate-back-end-rails.herokuapp.com/api/v1/location/1')
+        .to_return(status: 200, body: first_login, headers: {})
+  
+      no_favs = File.read('spec/fixtures/empty_favs.json')
+      stub_request(:get, 'https://relocate-back-end-rails.herokuapp.com/api/v1/favorites/1')
+        .to_return(status: 200, body: no_favs, headers: {})
+  
+      visit root_path
+      click_link 'Login with Google'
+
+
       json_response = File.read('spec/fixtures/utilities/electric_search.json')
       stub_request(:get, "https://relocate-back-end-rails.herokuapp.com/api/v1/yelp/80211/utilities/electricity")
         .to_return(status: 200, body: json_response, headers: {})
@@ -44,18 +69,34 @@ describe 'As a logged in user' do
       click_link 'Xcel Energy'
       expect(current_path).to eq('/businesses/9s8dfs7fsdmsdf')
 
-      # create_fav = File.read('spec/fixtures/fav_business_create.json')
-      # stub_request(:post, "https://relocate-back-end-rails.herokuapp.com/api/v1/favorites/1/9s8dfs7fsdmsdf?business_name=Xcel%20Energy")
-      # .to_return(status: 200, body: create_fav, headers: {})
+      create_fav = File.read('spec/fixtures/fav_business_create.json')
+      stub_request(:post, "https://relocate-back-end-rails.herokuapp.com/api/v1/favorites/1/9s8dfs7fsdmsdf?business_name=Xcel%20Energy")
+      .to_return(status: 200, body: create_fav, headers: {})
 
-      # click_link 'Favorite this Business'
+      click_on('favorite')
 
-      # get_fav = File.read('spec/fixtures/get_favorite.json')
-      # stub_request(:get, "https://relocate-back-end-rails.herokuapp.com/api/v1/favorites/1")
-      # .to_return(status: 200, body: get_fav, headers: {})
+      expect(current_path).to eq(dashboard_path)
+      expect(page).to have_content('Business Saved!')
+    end
 
-      # expect(current_path).to eq(dashboard_path)
-      # expect(page).to have_content('Business Saved!')
+    it 'I can delete a favorited business' do
+      stub_omniauth
+      @user = create(:omniauth_mock_user, id: 1)
+  
+      first_login = File.read('spec/fixtures/location_search_null.json')
+      stub_request(:get, 'https://relocate-back-end-rails.herokuapp.com/api/v1/location/1')
+        .to_return(status: 200, body: first_login, headers: {})
+  
+      get_favs = File.read('spec/fixtures/get_favorite.json')
+      stub_request(:get, 'https://relocate-back-end-rails.herokuapp.com/api/v1/favorites/1')
+        .to_return(status: 200, body: get_favs, headers: {})
+  
+      visit root_path
+      click_link 'Login with Google'
+
+      expect(page).to have_link('Xcel Energy')
+      find('.delete').click
+      expect(current_path).to eq(dashboard_path)
     end
   end
 end

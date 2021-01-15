@@ -17,10 +17,6 @@
       <%= image_tag "mobile-phone" , {size: "50" } %>
         <%= @phone %>
     </p>
-    <p class="pad-25-bottom">
-      <%= image_tag "distance" , {size: "50" } %>
-        <%= @distance.round(2) %> miles away
-    </p>
     <div class="pad-50-top txt-show">
       <%= link_to image_tag("delete", class: "delete-img-show" ), "/#{current_user.id}/favorites/#{@id}" , method: :delete %>Delete from favorites
     </div>

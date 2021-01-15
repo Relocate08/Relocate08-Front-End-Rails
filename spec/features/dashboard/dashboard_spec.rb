@@ -156,5 +156,31 @@ describe 'As a user' do
         expect(page).to have_content("You must be logged in")
       end
     end
+
+    it 'can destroy a saved zipcode' do
+      stub_omniauth
+      user = create(:omniauth_mock_user, id: 1)
+      json_response = File.read('spec/fixtures/location_search.json')
+
+      stub_request(:get, "https://relocate-back-end-rails.herokuapp.com/api/v1/location/#{user.id}")
+        .to_return(status: 200, body: json_response, headers: {})
+
+      no_favs = File.read('spec/fixtures/empty_favs.json')
+
+      stub_request(:get, 'https://relocate-back-end-rails.herokuapp.com/api/v1/favorites/1')
+        .to_return(status: 200, body: no_favs, headers: {})
+
+      visit root_path
+
+      click_link 'Login with Google'
+
+      json_response = File.read('spec/fixtures/location_search.json')
+      stub_request(:delete, "https://relocate-back-end-rails.herokuapp.com/api/v1/location/#{user.id}")
+        .to_return(status: 200, body: json_response, headers: {})
+
+      click_on('Delete Saved Zipcode')
+
+      expect(current_path).to eq(dashboard_path)
+    end
   end
 end

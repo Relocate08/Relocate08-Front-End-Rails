@@ -73,21 +73,26 @@
     </div>
   </div>
 </div>
+
 <% if @favorites.empty? %>
-<h4 class="center pad-100-top">You have no favorites.</h4>
+  <h4 class="center pad-100-top">You have no favorites.</h4>
 <% else %>
-<div class="container">
-  <% @favorites.each do |fav| %>
-  <div class="card-deck mb-3 text-center">
-    <div class="favorites-info card mb-4 box-shadow favorite-size">
-      <div class="card-header">
-        <h4 class="my-0 font-weight-normal"><%= link_to "#{fav.business_name}" , "/#{current_user.id}/favorites/#{fav.yelp_business_id}" , class: "a-primary" %><br></h4>
+  <div class="container pad-25-top">
+    <div class="row">
+    <% @favorites.each do |fav| %>
+      <div class="card-deck mb-3 text-center gutter5">
+        <div class="card mb-4 box-shadow favorites-info">
+
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title pricing-card-title"><%= link_to "#{fav.business_name}" , "/#{current_user.id}/favorites/#{fav.yelp_business_id}" , class: "favorite-font" %></h1>
+
+            <div class="text-right">
+              <%= link_to image_tag("delete", class: "delete-img" ), "/#{current_user.id}/favorites/#{fav.yelp_business_id}" , method: :delete %>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="card-body d-flex flex-column float-right">
-        <%= link_to image_tag("delete", class: "delete-img" ), "/#{current_user.id}/favorites/#{fav.yelp_business_id}" , method: :delete %>
-      </div>
+    <% end %>
     </div>
   </div>
-  <% end %>
-</div>
 <% end %>

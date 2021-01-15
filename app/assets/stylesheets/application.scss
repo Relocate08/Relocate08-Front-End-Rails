@@ -241,6 +241,10 @@ hr {
   margin: 10px;
 };
 
+.gutter5 {
+  margin: 10px;
+};
+
 .light-text {
   color: #f4f4f4;
 };
@@ -284,20 +288,12 @@ hr {
 }
 
 .favorites-info {
-  width: 300px;
   background-color: $periwinkle;
-  padding: 10px;
   border: solid 1px #999;
   box-shadow:  0 0 10px  rgba(0,12,0,0.6);
   -moz-box-shadow: 0 0 10px  rgba(0,12,0,0.6);
   -webkit-box-shadow: 0 0 10px  rgba(0,12,0,0.6);
   -o-box-shadow: 0 0 10px  rgba(0,12,0,0.6);
-  border-top-left-radius:12px;
-  border-top-right-radius:12px;
-  border-bottom-left-radius:12px;
-  border-bottom-right-radius:12px;
-  color: white;
-  font-size: 30px;
 };
 
 .delete-img {
@@ -327,3 +323,8 @@ hr {
 .zip {
   color: $burgundy;
 };
+
+.favorite-font {
+  font-size: 30px;
+  color: #40464b;
+}

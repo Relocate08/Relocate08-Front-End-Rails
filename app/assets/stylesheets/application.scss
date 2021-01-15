@@ -63,6 +63,10 @@ $periwinkle: #7692CC;
   padding-left: 25px;
 }
 
+.pad-10-bottom {
+  padding-bottom: 10px;
+}
+
 body {
   // margin: 15px 30px;
   font-family: 'Rubik', sans-serif;
@@ -299,18 +303,27 @@ hr {
 .delete-img {
   height: 30px;
   width: 30px;
-}
+};
+
+.like-img {
+  height: 30px;
+  width: 30px;
+};
 
 .delete-img-show {
   height: 40px;
   width: 40px;
-}
+};
+
+.like-img-show {
+  height: 40px;
+  width: 40px;
+};
 
 .txt-show {
   font-size: 20px;
-}
+};
 
-.like {
-  height: 30px;
-  width: 30px;
-}
+.zip {
+  color: $burgundy;
+};

@@ -39,6 +39,40 @@ describe CategoryService do
         expect(business_data[:attributes]).to have_key :distance
         expect(business_data[:attributes][:distance]).to be_a(Float)
       end
+
+      it 'returns a business' do 
+        fav = File.read('spec/fixtures/xcel_fav.json')
+        stub_request(:get, 'https://relocate-back-end-rails.herokuapp.com/api/v1/yelp/businesses/9s8dfs7fsdmsdf')
+        .to_return(status: 200, body: fav, headers: {})
+  
+        info = CategoryService.a_business('9s8dfs7fsdmsdf')
+        
+        expect(info).to be_a Hash
+        expect(info[:data]).to have_key(:id)
+        expect(info[:data][:id]).to be_a String
+
+        expect(info[:data]).to have_key(:type)
+        expect(info[:data][:type]).to be_a String
+
+        expect(info[:data]).to have_key(:attributes)
+        expect(info[:data][:attributes]).to be_a Hash
+
+        info_attr = info[:data][:attributes]
+        expect(info_attr).to have_key(:name)
+        expect(info_attr[:name]).to be_a String
+        expect(info_attr).to have_key(:image)
+        expect(info_attr[:image]).to be_a String
+        expect(info_attr).to have_key(:url)
+        expect(info_attr[:url]).to be_a String
+        expect(info_attr).to have_key(:phone)
+        expect(info_attr[:phone]).to be_a String
+        expect(info_attr).to have_key(:distance)
+        expect(info_attr[:distance]).to eq(nil)
+        expect(info_attr).to have_key(:location)
+        expect(info_attr[:location]).to be_a String
+        expect(info_attr).to have_key(:id)
+        expect(info_attr[:id]).to be_a String
+      end
     end
   end
 end

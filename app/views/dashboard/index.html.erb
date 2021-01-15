@@ -22,13 +22,13 @@
           <% end %>
 
           <%= button_to 'Search With Saved Zipcode', address_path(@location), method: :get %>
-          
+
            <%= form_with  url: '/location', method: :patch, local: true do |f| %>
             <%= f.text_field :location, placeholder: 'Update Your Zipcode', min: 10000, max: 99950  %>
             <%= f.submit 'Update Zipcode', class: "btn orange" %>
           <% end %>
 
-           <%= button_to 'Delete Saved Zipcode', '/location', method: :delete %> 
+           <%= button_to 'Delete Saved Zipcode', '/location', method: :delete %>
         <% end %>
       </div>
     </div>

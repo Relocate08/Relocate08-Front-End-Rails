@@ -18,7 +18,6 @@ class Event
 
 	def readable_time
 		time = time_start[11..15]
-		require 'pry'; binding.pry
 		time_int = time[0..1].to_i
 		if time_int > 12
 			new_hour = time_int - 12

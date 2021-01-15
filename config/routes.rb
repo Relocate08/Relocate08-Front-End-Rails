@@ -13,10 +13,10 @@ Rails.application.routes.draw do
 
   get '/address', to: 'service_category#index'
   get '/businesses/:id', to: 'service_types#show'
+  get '/events', to: 'events#index'
   get '/:location/utilities', to: 'services#utilities_index'
   get '/:location/recreation', to: 'services#recreation_index'
   get '/:location/homeservices', to: 'services#homeservices_index'
-  get '/:location/events', to: 'events#index'
   get '/:location/:services/:type', to: 'service_types#index'
 
   get '/team', to: 'team#index', as: :team

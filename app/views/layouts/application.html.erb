@@ -59,7 +59,9 @@
 
     <section class="pad-25-bottom" id="main">
       <% flash.each do |type, message| %>
-        <p><%= message %></p>
+        <div class="custom-alert">
+          <center><%= message %></center>
+        </div>
       <% end %>
       <%= yield %>
     </section>

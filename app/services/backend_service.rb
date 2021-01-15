@@ -1,4 +1,5 @@
 class BackendService
+
     def self.location_exists(id)
       response = conn.get("/api/v1/location/#{id}")
       JSON.parse(response.body, symbolize_names: true)

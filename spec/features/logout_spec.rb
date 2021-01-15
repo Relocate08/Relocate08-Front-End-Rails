@@ -24,10 +24,3 @@ describe 'As a logged in user' do
     expect(page).to have_link('Login with Google')
   end
 end
-
-Tip: Based on detected gems, the following RuboCop extension libraries might be helpful:
-  * rubocop-rspec (http://github.com/rubocop-hq/rubocop-rspec)
-
-You can opt out of this message by adding the following to your config (see https://docs.rubocop.org/rubocop/extensions.html#extension-suggestions for more options):
-  AllCops:
-    SuggestExtensions: false

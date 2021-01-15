@@ -26,31 +26,19 @@ describe 'As an authenticated user' do
       expect(page).to have_link('Privacy Policy')
     end
 
-    xit 'Google OAuth logs in new user' do
-      user = User.new
-      user.id = 1
-
-      allow(User).to receive(:find_or_create_by).and_return(user)
-
-      user_count = User.count
-      expect(user_count).to eq(0)
-
+    it 'Google OAuth logs in new user' do
       stub_omniauth
-      user_count = User.count
-      expect(user_count).to eq(0)
-
+      @user = create(:omniauth_mock_user, id: 1)
+  
+      first_login = File.read('spec/fixtures/location_search_null.json')
+      stub_request(:get, 'https://relocate-back-end-rails.herokuapp.com/api/v1/location/1')
+        .to_return(status: 200, body: first_login, headers: {})
+  
+      no_favs = File.read('spec/fixtures/empty_favs.json')
+      stub_request(:get, 'https://relocate-back-end-rails.herokuapp.com/api/v1/favorites/1')
+        .to_return(status: 200, body: no_favs, headers: {})
+  
       visit root_path
-
-      json_response = File.read('spec/fixtures/location_search_null.json')
-      stub_request(:get, "https://relocate-back-end-rails.herokuapp.com/api/v1/location/1").
-      with(
-        headers: {
-        'Accept'=>'*/*',
-        'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-        'User-Agent'=>'Faraday v1.3.0'
-        }).
-      to_return(status: 200, body: json_response, headers: {})
-
       click_link 'Login with Google'
 
       expect(current_path).to eq(dashboard_path)
@@ -63,26 +51,21 @@ describe 'As an authenticated user' do
       expect(page).to have_link('Logout')
     end
 
-    xit 'Returning Google user is logged in' do
+    it 'Returning Google user is logged in' do
       stub_omniauth
-      create(:omniauth_mock_user)
-      user_count = User.count
-      expect(user_count).to eq(1)
-
+      @user = create(:omniauth_mock_user, id: 1)
+  
+      has_location = File.read('spec/fixtures/location_search.json')
+      stub_request(:get, 'https://relocate-back-end-rails.herokuapp.com/api/v1/location/1')
+        .to_return(status: 200, body: has_location, headers: {})
+  
+      no_favs = File.read('spec/fixtures/empty_favs.json')
+      stub_request(:get, 'https://relocate-back-end-rails.herokuapp.com/api/v1/favorites/1')
+        .to_return(status: 200, body: no_favs, headers: {})
+  
       visit root_path
-      user = User.last
-
-      json_response = File.read('spec/fixtures/location_search.json')
-      stub_request(:get, "https://relocate-back-end-rails.herokuapp.com/api/v1/location/#{user.id}").
-      with(
-        headers: {
-          'Accept'=>'*/*',
-          'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-          'User-Agent'=>'Faraday v1.3.0'
-          }).
-          to_return(status: 200, body: json_response, headers: {})
-
       click_link 'Login with Google'
+
       user_count = User.count
       expect(user_count).to eq(1)
 

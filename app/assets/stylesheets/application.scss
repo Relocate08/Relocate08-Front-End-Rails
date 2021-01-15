@@ -324,6 +324,42 @@ hr {
   color: $burgundy;
 };
 
+.events-info {
+  width: 20rem;
+  background-color: $bright-blue;
+  padding: 10px;
+  border: solid 1px #999;
+  // box-shadow:  0 0 10px  rgba(0,12,0,0.6);
+  // -moz-box-shadow: 0 0 10px  rgba(0,12,0,0.6);
+  // -webkit-box-shadow: 0 0 10px  rgba(0,12,0,0.6);
+  // -o-box-shadow: 0 0 10px  rgba(0,12,0,0.6);
+  // border-top-left-radius:12px;
+  // border-top-right-radius:12px;
+  // border-bottom-left-radius:12px;
+  // border-bottom-right-radius:12px;
+  color: #40464b;
+  font-size: 30px;
+};
+
+.event-name {
+  color: $burgundy;
+}
+
+.card-title {
+  color: $burgundy;
+  text-align: center;
+}
+
+.card-text {
+  font-size: 15px;
+  text-align: center;
+}
+
+.card-link {
+  font-size: 20px;
+  text-align: center;
+}
+
 .favorite-font {
   font-size: 25px;
   color: #40464b;

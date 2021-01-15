@@ -4,10 +4,12 @@
       <h1>Services Search</h1>
       <% if @facade %>
         <div class="pad-50-top">
-          <%= form_with url: '/address' , method: :get, local: true do |f| %>
-            <%= f.text_field :format, placeholder: 'Search Any Zipcode' , min: 10000, max: 99950 %>
-            <%= f.submit 'Search Location' , class: "btn btn-warning" %>
-          <% end %>
+          <div id="any-zipcode">
+            <%= form_with url: '/address' , method: :get, local: true do |f| %>
+              <%= f.text_field :format, placeholder: 'Search Any Zipcode' , min: 10000, max: 99950 %>
+              <%= f.submit 'Search Location' , class: "btn btn-warning" %>
+            <% end %>
+          </div>
         <% end %>
         </div>
     </div>
@@ -16,16 +18,20 @@
         <% if !@facade %>
         <h3 class="pad-50-top float-right"> Current Zipcode: None Saved </h3>
         <div class="pad-25-bottom float-right">
-          <%= form_with  url: '/location', method: :post, local: true do |f| %>
-            <%= f.text_field :location, placeholder: 'Save Your New Zipcode', min: 10000, max: 99950  %>
-            <%= f.submit 'Save Location', class: "btn btn-warning" %>
-          <% end %>
+          <div id="save-location">
+            <%= form_with  url: '/location', method: :post, local: true do |f| %>
+              <%= f.text_field :location, placeholder: 'Save Your New Zipcode', min: 10000, max: 99950  %>
+              <%= f.submit 'Save Location', class: "btn btn-warning" %>
+            <% end %>
+          </div>
         </div>
         <% else %>
 
         <h2 class="float-right zip"> Current Zipcode: <%= @location %></h2>
         <div class="pad-10-bottom float-right">
-          <%= button_to 'Search With Saved Zipcode', address_path(@location), method: :get, class: "btn btn-warning" %>
+          <div id="current-location">
+            <%= button_to 'Search With Saved Zipcode', address_path(@location), method: :get, class: "btn btn-warning" %>
+          </div>
         </div>
         <div class="pad-10-bottom float-right">
            <%= form_with  url: '/location', method: :patch, local: true do |f| %>
@@ -34,7 +40,7 @@
           <% end %>
         </div>
         <div class="float-right pad-25-bottom">
-           <%= button_to 'Delete Saved Zipcode', '/location', method: :delete, class: "btn btn-warning" %> 
+           <%= button_to 'Delete Saved Zipcode', '/location', method: :delete, class: "btn btn-warning" %>
         </div>
         <% end %>
       </div>

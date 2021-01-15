@@ -10,6 +10,8 @@ All three repositories that make up this project can be found [here](https://git
 
 #### [Visit the Deployed Application Here](https://relocate-front-end-rails.herokuapp.com/)
 
+![Relocate Website Demo](app/assets/images/Relocate_Demo.gif)
+
 ## Table of Contents
   - [Design](#design)
   - [Setup](#setup)

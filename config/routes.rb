@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get '/:location/utilities', to: 'services#utilities_index'
   get '/:location/recreation', to: 'services#recreation_index'
   get '/:location/homeservices', to: 'services#homeservices_index'
+  get '/:location/events', to: 'events#index'
   get '/:location/:services/:type', to: 'service_types#index'
 
   get '/team', to: 'team#index', as: :team

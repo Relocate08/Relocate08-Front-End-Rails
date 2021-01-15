@@ -1,0 +1,13 @@
+<h1>Events</h1>
+
+<% @events.each do |event| %>
+	<h4><%= event.name %></h4>
+	<p><%= link_to "Event Website", event.url %></p>
+	<p>Location: <%= event.location %></p>
+	<p>Date: <%= event.readable_date %></p>
+	<p>Time: <%= event.readable_time %></p>
+	<p><%= "FREE EVENT" if event.is_free == true %></p>
+	<p><%= "See website for ticket prices" if event.is_free == false %></p>
+	<p>Attending: <%= event.attending_count %></p>
+	<p>Interested: <%= event.interested_count %></p>
+<% end %>

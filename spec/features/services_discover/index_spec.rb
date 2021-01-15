@@ -6,9 +6,9 @@ describe 'As a registered user' do
       stub_omniauth
       @user = create(:omniauth_mock_user, id: 1)
   
-      first_login = File.read('spec/fixtures/location_search_null.json')
+      has_location = File.read('spec/fixtures/location_search.json')
       stub_request(:get, 'https://relocate-back-end-rails.herokuapp.com/api/v1/location/1')
-        .to_return(status: 200, body: first_login, headers: {})
+        .to_return(status: 200, body: has_location, headers: {})
   
       no_favs = File.read('spec/fixtures/empty_favs.json')
       stub_request(:get, 'https://relocate-back-end-rails.herokuapp.com/api/v1/favorites/1')
@@ -17,11 +17,14 @@ describe 'As a registered user' do
       visit root_path
       click_link 'Login with Google'
 
-      visit '/address'
-save_and_open_page
-      # expect(page).to have_content('Service Categories')
-      # expect(page).to have_link('Utilites')
-      # expect(page).to have_link('Entertainment')
+      expect(current_path).to eq(dashboard_path)
+      click_button('Search With Saved Zipcode')
+
+      expect(page).to have_content('Service Categories')
+      
+      expect(page).to have_content('Utilities')
+      expect(page).to have_content('Recreation')
+      expect(page).to have_content('Home Services')
     end
   end
 end

@@ -13,7 +13,7 @@ describe 'As a registered user' do
       no_favs = File.read('spec/fixtures/empty_favs.json')
       stub_request(:get, 'https://relocate-back-end-rails.herokuapp.com/api/v1/favorites/1')
         .to_return(status: 200, body: no_favs, headers: {})
-  
+
       visit root_path
       click_link 'Login with Google'
 

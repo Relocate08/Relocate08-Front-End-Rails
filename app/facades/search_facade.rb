@@ -22,7 +22,7 @@ class SearchFacade
 
   def self.save_address(user_id, location)
     BackendService.save_location(user_id, location)
-  end  
+  end
 
   def self.update_address(user_id, location)
     BackendService.update_location(user_id, location)
@@ -32,4 +32,3 @@ class SearchFacade
     BackendService.destroy_location(user_id)
   end
 end
-

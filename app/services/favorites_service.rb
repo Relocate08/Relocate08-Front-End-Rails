@@ -1,6 +1,6 @@
 class FavoritesService
   def self.save_favorite(user_id, yelp_business_id, business_name)
-    response = conn.post("/api/v1/favorites/#{user_id}/#{yelp_business_id}") do |req|
+    conn.post("/api/v1/favorites/#{user_id}/#{yelp_business_id}") do |req|
       req.params[:business_name] = business_name
     end
   end
@@ -16,7 +16,7 @@ class FavoritesService
   end
 
   def self.delete_favorite(user_id, yelp_business_id)
-    response = conn.delete("/api/v1/favorites/#{user_id}/#{yelp_business_id}")
+    conn.delete("/api/v1/favorites/#{user_id}/#{yelp_business_id}")
   end
 
   def self.conn

@@ -37,5 +37,14 @@ describe 'As a User' do
         expect(page).to have_content(4)
       end
     end
+    it "can not be accessed if not logged in" do
+
+      visit '/dashboard'
+      expect(current_path).to eq("/")
+
+      within(".custom-alert") do
+        expect(page).to have_content("You must be logged in")
+      end
+    end
   end
 end

@@ -1,4 +1,5 @@
 class ServicesController < ApplicationController
+  before_action :authorize
   def utilities_index; end
 
   def recreation_index; end

@@ -57,42 +57,6 @@
     </div>
     <div class="col-md-5 pad-25-top center">
       <div class="location-search float-right">
-        <%= form_with url: '/:location/events' , method: :get, local: true do |f| %>
-          <%= f.text_field :location, placeholder: 'zipcode' , min: 10000, max: 99950 %>
-          <%= f.submit 'Find Events' , class: "btn btn-warning" %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
-
-<hr>
-
-<div class="container">
-  <div class="row justify-content-start">
-    <div class="col-md-7 pad-25-top">
-      <h1 class="align-top">Events Search</h1>
-    </div>
-    <div class="col-md-5 pad-25-top center">
-      <div class="location-search float-right">
-      <%= form_with  url: '/:location/events', method: :get, local: true do |f| %>
-        <%= f.text_field :location, placeholder: 'Search Any Zipcode', min: 10000, max: 99950 %>
-        <%= f.submit 'Find Events', class: "btn btn-warning" %>
-      <% end %>
-      </div>
-    </div>
-  </div>
-</div>
-
-<hr>
-
-<div class="container">
-  <div class="row justify-content-start">
-    <div class="col-md-7 pad-25-top">
-      <h1 class="align-top">Events Search</h1>
-    </div>
-    <div class="col-md-5 pad-25-top center">
-      <div class="location-search float-right">
       <%= form_with  url: '/events', method: :get, local: true do |f| %>
         <%= f.text_field :location, placeholder: 'Search Any Zipcode' %>
         <%= f.submit 'Find Events', class: "btn btn-warning" %>

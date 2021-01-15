@@ -22,31 +22,46 @@
           <% end %>
 
           <%= button_to 'Search With Saved Zipcode', address_path(@location), method: :get %>
-          
+
            <%= form_with  url: '/location', method: :patch, local: true do |f| %>
             <%= f.text_field :location, placeholder: 'Update Your Zipcode', min: 10000, max: 99950  %>
             <%= f.submit 'Update Zipcode', class: "btn orange" %>
           <% end %>
 
-           <%= button_to 'Delete Saved Zipcode', '/location', method: :delete %> 
+           <%= button_to 'Delete Saved Zipcode', '/location', method: :delete %>
         <% end %>
       </div>
     </div>
   </div>
 </div>
+
 <hr>
+
 <div class="container">
   <div class="row justify-content-start">
-    <div class="col-md-6 pad-25-top center">
-      <h1 class="align-top">Favorites</h1>
+    <div class="col-md-7 pad-25-top">
+      <h1 class="align-top">Events Search</h1>
     </div>
-    <div class="col-md-6 pad-25-top center">
-      <h1 class="align-top">Events</h1>
+    <div class="col-md-5 pad-25-top center">
+      <div class="location-search float-right">
+      <%= form_with  url: '/:location/events', method: :get, local: true do |f| %>
+        <%= f.text_field :location, placeholder: 'Search Any Zipcode', min: 10000, max: 99950 %>
+        <%= f.submit 'Find Events', class: "btn btn-warning" %>
+      <% end %>
+      </div>
     </div>
   </div>
 </div>
 
 <hr>
+
+<div class="container">
+  <div class="row justify-content-start">
+    <div class="col-md-12 pad-25-top center">
+      <h1 class="align-top">Favorites</h1>
+    </div>
+  </div>
+</div>
 
 <% if @favorites.empty? %>
   <h4 class="center pad-100-top">You have no favorites.</h4>

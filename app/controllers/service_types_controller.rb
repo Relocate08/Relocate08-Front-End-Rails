@@ -1,4 +1,5 @@
 class ServiceTypesController < ApplicationController
+  before_action :authorize
   def index
     @businesses = Rails.cache.fetch(
       "#{params[:location] + params[:services] + params[:type]}/search_facade/all_businesses", expires_in: 12.hours

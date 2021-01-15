@@ -22,7 +22,7 @@ describe 'As a user' do
       stub_request(:post, "https://relocate-back-end-rails.herokuapp.com/api/v1/80211/#{@user.id}")
         .to_return(status: 200, body: json_response, headers: {})
 
-      within '#save-location' do
+      within '.save-location' do
         fill_in :location, with: '80211'
         click_on 'Save Location'
       end
@@ -49,7 +49,7 @@ describe 'As a user' do
 
       visit '/dashboard'
 
-      within '#current-location' do
+      within '.current-location' do
         click_button 'Search With Saved Zipcode'
       end
 
@@ -75,7 +75,7 @@ describe 'As a user' do
 
       click_link 'Login with Google'
 
-      within '#save-location' do
+      within '.save-location' do
         fill_in :location, with: '3012q'
         click_on 'Save Location'
       end
@@ -83,7 +83,7 @@ describe 'As a user' do
       expect(current_path).to eq(dashboard_path)
       expect(page).to have_content('Please enter a valid zipcode')
 
-      within '#save-location' do
+      within '.save-location' do
         fill_in :location, with: '****'
         click_on 'Save Location'
       end
